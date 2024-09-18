@@ -7,6 +7,10 @@
     <groupId>com.rpc</groupId>
     <artifactId>learn-rpc</artifactId>
     <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>hessian-rpc</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
@@ -15,6 +19,17 @@
     </properties>
 
     <dependencies>
+        <!-- grpc -->
+
+        <!-- hessian -->
+
+        <!-- global -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
+        </dependency>
+
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
