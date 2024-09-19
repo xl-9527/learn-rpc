@@ -18,6 +18,6 @@
 
     <servlet-mapping>
         <servlet-name>user-service-rpc</servlet-name>
-        <url-pattern>/rpc/user</url-pattern>
+        <url-pattern>/rpc-user</url-pattern>
     </servlet-mapping>
 </web-app>
