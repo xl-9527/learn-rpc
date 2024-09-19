@@ -9,8 +9,7 @@
 
     <artifactId>hessian-rpc</artifactId>
     <packaging>war</packaging>
-    <name>hessian-rpc Maven Webapp</name>
-    <url>http://maven.apache.org</url>
+    <name>hessian-rpc</name>
 
     <dependencies>
         <dependency>
