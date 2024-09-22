@@ -5,17 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.rpc</groupId>
-        <artifactId>learn-rpc</artifactId>
+        <artifactId>thrift-rpc</artifactId>
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>thrift-rpc</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>thrift-rpc-client</module>
-        <module>thrift-rpc-server</module>
-        <module>thrift-rpc-common</module>
-    </modules>
+    <artifactId>thrift-rpc-common</artifactId>
 
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
@@ -23,10 +17,4 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.thrift</groupId>
-            <artifactId>libthrift</artifactId>
-        </dependency>
-    </dependencies>
 </project>

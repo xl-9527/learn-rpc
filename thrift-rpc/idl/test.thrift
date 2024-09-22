@@ -1,3 +1,5 @@
+# include，他的作用是用作 idl 的模块化编程的
+include "include_test.thrift"
 # 单行注释
 
 // 单行注释
@@ -9,6 +11,8 @@
 
 // 指定生成好的代码包，其中 namespace 是固定的，后面的是语言，可以是Java 也可以是其他的，后面的是包路径
 namespace java com.rpc.thrift
+namespace go com.rpc.thrift
+namespace py com.rpc.thrift
 
 // 数据类型
 # 基本数据类型
@@ -44,4 +48,38 @@ struct User {
     3: i32 age,
     4: list<string> hobby = ['codeing', '足球', '篮球'],
     5: string school
+}
+
+# 枚举类型， 枚举是不支持嵌套的，这里等于后面如果是数字，，虽然在 Thrift 中可以有 i8 ~ i64 但是这里默认是 i32
+enum SEASON {
+    SPRING = 1,
+    SUMMERT = 2,
+}
+
+# 异常的定义，一般我们都只会定义两个异常属性
+exception RuntimeException {
+    1: i8 code,
+    2: string errorMsg
+}
+
+# service 这里比较重要的第二个就是 service 的定义，他的定义类似于 Java 中的接口
+service UserService {
+    bool loginIn(1:string username, 2: string password) throws (1:RuntimeException e);
+    void register(1: User user); // 这里的 User 起始对应一个 struct
+    // oneway 他表示客户端不会等待服务端响应直接结束请求，类似于 Java 的异步操作，并且他只能配合 void 使用
+    oneway void loginOut();
+}
+
+# 服务是继承的
+service Parent {
+    void pMethod();
+}
+
+
+service Child extends Parent{
+    void cMethod()
+}
+
+struct IncludeTest {
+       1:include_test.IncludeChild child
 }
