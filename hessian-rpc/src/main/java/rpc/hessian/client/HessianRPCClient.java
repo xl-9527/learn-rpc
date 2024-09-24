@@ -28,7 +28,7 @@ public class HessianRPCClient {
      */
     private static class HessianUserStub implements UserService {
         private final UserService stub = (UserService) HESSIAN_PROXY_FACTORY
-                .create(UserService.class, "http://localhost:8080/hessian-rpc/rpc/user");
+                .create(UserService.class, "http://localhost:8080/hessian-rpc/rpc-user");
 
         public HessianUserStub() throws MalformedURLException {
         }

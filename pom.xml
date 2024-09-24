@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>hessian-rpc</module>
+        <module>thrift-rpc</module>
     </modules>
 
     <properties>
@@ -19,10 +20,6 @@
     </properties>
 
     <dependencies>
-        <!-- grpc -->
-
-        <!-- hessian -->
-
         <!-- global -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -42,4 +39,25 @@
             <version>2.0.16</version>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- hessian -->
+            <dependency>
+                <groupId>com.caucho</groupId>
+                <artifactId>hessian</artifactId>
+                <version>4.0.63</version>
+            </dependency>
+
+            <!-- grpc -->
+
+
+            <!-- thrift -->
+            <dependency>
+                <groupId>org.apache.thrift</groupId>
+                <artifactId>libthrift</artifactId>
+                <version>0.20.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
