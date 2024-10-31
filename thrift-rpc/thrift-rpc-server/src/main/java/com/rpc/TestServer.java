@@ -3,11 +3,16 @@ package com.rpc;
 import com.rpc.service.UserServiceImpl;
 import com.rpc.thrift.UserService;
 import org.apache.thrift.protocol.TBinaryProtocol;
+import org.apache.thrift.protocol.TCompactProtocol;
+import org.apache.thrift.server.TNonblockingServer;
 import org.apache.thrift.server.TSimpleServer;
 import org.apache.thrift.server.TThreadPoolServer;
-import org.apache.thrift.transport.TServerSocket;
-import org.apache.thrift.transport.TServerTransport;
-import org.apache.thrift.transport.TTransportException;
+import org.apache.thrift.transport.*;
+import org.apache.thrift.transport.layered.TFramedTransport;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
 
 /**
  * @author xl-9527
@@ -17,7 +22,20 @@ public class TestServer {
 
     public static void main(String[] args) throws TTransportException {
         // tSimpleServer();
-        tThreadPoolServer();
+        // tThreadPoolServer();
+        tNonBlockingServer();
+    }
+
+    private static void tNonBlockingServer() throws TTransportException {
+        try (final TNonblockingServerTransport framedTransport = new TNonblockingServerSocket(9090)) {
+            final TNonblockingServer nonblockingServer = new TNonblockingServer(
+                    new TNonblockingServer.Args(framedTransport)
+                            .protocolFactory(new TCompactProtocol.Factory())
+                            .processor(new UserService.Processor<>(new UserServiceImpl()))
+            );
+            framedTransport.accept();
+            nonblockingServer.serve();
+        }
     }
 
     private static void tThreadPoolServer() throws TTransportException {
