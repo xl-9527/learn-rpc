@@ -7,12 +7,8 @@ import org.apache.thrift.protocol.TCompactProtocol;
 import org.apache.thrift.server.TNonblockingServer;
 import org.apache.thrift.server.TSimpleServer;
 import org.apache.thrift.server.TThreadPoolServer;
+import org.apache.thrift.server.TThreadedSelectorServer;
 import org.apache.thrift.transport.*;
-import org.apache.thrift.transport.layered.TFramedTransport;
-
-import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
 
 /**
  * @author xl-9527
@@ -23,7 +19,20 @@ public class TestServer {
     public static void main(String[] args) throws TTransportException {
         // tSimpleServer();
         // tThreadPoolServer();
-        tNonBlockingServer();
+        // tNonBlockingServer();
+        tThreadSelectorServer();
+    }
+
+    private static void tThreadSelectorServer() throws TTransportException {
+        try (TNonblockingServerSocket serverSocket = new TNonblockingServerSocket(9090)) {
+            serverSocket.accept();
+            final TThreadedSelectorServer selectorServer = new TThreadedSelectorServer(
+                    new TThreadedSelectorServer.Args(serverSocket)
+                            .protocolFactory(new TCompactProtocol.Factory())
+                            .processor(new UserService.Processor<>(new UserServiceImpl()))
+            );
+            selectorServer.serve();
+        }
     }
 
     private static void tNonBlockingServer() throws TTransportException {
