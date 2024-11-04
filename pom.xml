@@ -11,6 +11,7 @@
     <modules>
         <module>hessian-rpc</module>
         <module>thrift-rpc</module>
+        <module>grpc-rpc</module>
     </modules>
 
     <properties>

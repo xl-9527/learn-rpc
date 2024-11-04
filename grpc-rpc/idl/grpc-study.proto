@@ -1,0 +1,10 @@
+// proto buffer 3 的版本信息
+syntax = "proto3";
+
+// java 的相关设置
+option java_multiple_files = false;
+option java_package = "com.rpc.grpc";
+option java_outer_classname = "GrpcStudyProto";
+
+// 基本语法
+
