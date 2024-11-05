@@ -11,5 +11,5 @@ message UserInfo {
 }
 
 service UserInfoService {
-  rpc getUserInfo() returns(UserInfo) {}
+  rpc getUserInfo(UserInfo) returns(UserInfo) {}
 }
