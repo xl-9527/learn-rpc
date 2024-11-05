@@ -6,5 +6,51 @@ option java_multiple_files = false;
 option java_package = "com.rpc.grpc";
 option java_outer_classname = "GrpcStudyProto";
 
-// 基本语法
+// 基本数据类型，在 protobuf 中基本数据类型和 thrift 的类似，我们以 java 为例来做介绍
+//
 
+// 枚举，枚举的下标必须从 0 开始
+enum Gender {
+  MALE = 0;
+  FEMALE = 1;
+}
+
+// message 的定义，他的概念和 thrift 中 struct 类似，也和 java 中 class 类似
+// 序号是从 1 开始，最大为 2 的 29 次方 -1，但是 19000 - 19999 这几个是不提供外部使用的，是 protobuf 自己保留的，序号不一定是要连续的，只要是唯一的就可以了
+// 提供了两个字段的修饰符，这里分别是 repeated（类似一个容器的概念，可以理解为 java 中的 List ），默认的是 singular（这个字段的值只能是 0 或者 1 个）
+message RoleInfo {
+  int32 roleInfoId = 1;
+  string roleName = 2;
+}
+
+message UserInfoRequest {
+  message UserInfoChild {
+
+  }
+
+  // 消息是可以嵌套定义，如果在内部访问必须定义在前。
+  // 如果想要在外部访问内部的 message，那么需要使用外部的 message 的 name.内部的 message 名字
+  int32 id = 1;
+  string username = 2;
+  repeated RoleInfo roleInfo = 3;
+  repeated UserInfoChild userInfoChild = 4;
+}
+
+message ParentInfo {
+  repeated UserInfoRequest.UserInfoChild userInfoChild = 1;
+}
+
+// oneOf，他代表 test 中的字段要么是 a 要么是 b，只能代表一个（实际使用的时候很少）
+message OneOfTest {
+  oneof test {
+    string username = 1;
+    int32 age = 2;
+  }
+}
+
+// 服务的定义
+// 服务在 protobuf 中可以定义多个，每个服务中也可以定义多个服务的方法
+service UserInfoService {
+  rpc getUserInfoById(UserInfoRequest) returns (stream UserInfoRequest) {}
+  rpc getUserInfoList(UserInfoRequest) returns (UserInfoRequest) {}
+}

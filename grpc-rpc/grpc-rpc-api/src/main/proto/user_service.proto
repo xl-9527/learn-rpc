@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+// java 基础的包和类名设置
+option java_outer_classname = "UserService";
+option java_package = "com.rpc.grpc";
+option java_multiple_files = false;
+
+message UserInfo {
+  int32 userInfoId = 1;
+  string username = 2;
+}
+
+service UserInfoService {
+  rpc getUserInfo() returns(UserInfo) {}
+}

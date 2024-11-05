@@ -11,6 +11,10 @@
 
     <groupId>com.rpc.grpc</groupId>
     <artifactId>grpc-rpc</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>grpc-rpc-api</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>23</maven.compiler.source>
