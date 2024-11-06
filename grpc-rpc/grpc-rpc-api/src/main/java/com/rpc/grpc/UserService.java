@@ -639,11 +639,1647 @@ public final class UserService {
 
   }
 
+  public interface UserInfoResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:UserInfoResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 userInfoId = 1;</code>
+     * @return The userInfoId.
+     */
+    int getUserInfoId();
+
+    /**
+     * <code>string username = 2;</code>
+     * @return The username.
+     */
+    java.lang.String getUsername();
+    /**
+     * <code>string username = 2;</code>
+     * @return The bytes for username.
+     */
+    com.google.protobuf.ByteString
+        getUsernameBytes();
+
+    /**
+     * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+     */
+    java.util.List<com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole> 
+        getUserInfoRoleList();
+    /**
+     * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+     */
+    com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole getUserInfoRole(int index);
+    /**
+     * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+     */
+    int getUserInfoRoleCount();
+    /**
+     * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+     */
+    java.util.List<? extends com.rpc.grpc.UserService.UserInfoResponse.UserInfoRoleOrBuilder> 
+        getUserInfoRoleOrBuilderList();
+    /**
+     * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+     */
+    com.rpc.grpc.UserService.UserInfoResponse.UserInfoRoleOrBuilder getUserInfoRoleOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code UserInfoResponse}
+   */
+  public static final class UserInfoResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:UserInfoResponse)
+      UserInfoResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UserInfoResponse.newBuilder() to construct.
+    private UserInfoResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UserInfoResponse() {
+      username_ = "";
+      userInfoRole_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UserInfoResponse();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.rpc.grpc.UserService.internal_static_UserInfoResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.rpc.grpc.UserService.internal_static_UserInfoResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.rpc.grpc.UserService.UserInfoResponse.class, com.rpc.grpc.UserService.UserInfoResponse.Builder.class);
+    }
+
+    public interface UserInfoRoleOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:UserInfoResponse.UserInfoRole)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>int32 roleId = 1;</code>
+       * @return The roleId.
+       */
+      int getRoleId();
+
+      /**
+       * <code>string roleName = 2;</code>
+       * @return The roleName.
+       */
+      java.lang.String getRoleName();
+      /**
+       * <code>string roleName = 2;</code>
+       * @return The bytes for roleName.
+       */
+      com.google.protobuf.ByteString
+          getRoleNameBytes();
+    }
+    /**
+     * Protobuf type {@code UserInfoResponse.UserInfoRole}
+     */
+    public static final class UserInfoRole extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:UserInfoResponse.UserInfoRole)
+        UserInfoRoleOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use UserInfoRole.newBuilder() to construct.
+      private UserInfoRole(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private UserInfoRole() {
+        roleName_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new UserInfoRole();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.rpc.grpc.UserService.internal_static_UserInfoResponse_UserInfoRole_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.rpc.grpc.UserService.internal_static_UserInfoResponse_UserInfoRole_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole.class, com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole.Builder.class);
+      }
+
+      public static final int ROLEID_FIELD_NUMBER = 1;
+      private int roleId_ = 0;
+      /**
+       * <code>int32 roleId = 1;</code>
+       * @return The roleId.
+       */
+      @java.lang.Override
+      public int getRoleId() {
+        return roleId_;
+      }
+
+      public static final int ROLENAME_FIELD_NUMBER = 2;
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object roleName_ = "";
+      /**
+       * <code>string roleName = 2;</code>
+       * @return The roleName.
+       */
+      @java.lang.Override
+      public java.lang.String getRoleName() {
+        java.lang.Object ref = roleName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          roleName_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string roleName = 2;</code>
+       * @return The bytes for roleName.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getRoleNameBytes() {
+        java.lang.Object ref = roleName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          roleName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (roleId_ != 0) {
+          output.writeInt32(1, roleId_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roleName_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, roleName_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (roleId_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(1, roleId_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roleName_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, roleName_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole)) {
+          return super.equals(obj);
+        }
+        com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole other = (com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole) obj;
+
+        if (getRoleId()
+            != other.getRoleId()) return false;
+        if (!getRoleName()
+            .equals(other.getRoleName())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + ROLEID_FIELD_NUMBER;
+        hash = (53 * hash) + getRoleId();
+        hash = (37 * hash) + ROLENAME_FIELD_NUMBER;
+        hash = (53 * hash) + getRoleName().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public static com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code UserInfoResponse.UserInfoRole}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:UserInfoResponse.UserInfoRole)
+          com.rpc.grpc.UserService.UserInfoResponse.UserInfoRoleOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.rpc.grpc.UserService.internal_static_UserInfoResponse_UserInfoRole_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.rpc.grpc.UserService.internal_static_UserInfoResponse_UserInfoRole_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole.class, com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole.Builder.class);
+        }
+
+        // Construct using com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole.newBuilder()
+        private Builder() {
+
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          roleId_ = 0;
+          roleName_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.rpc.grpc.UserService.internal_static_UserInfoResponse_UserInfoRole_descriptor;
+        }
+
+        @java.lang.Override
+        public com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole getDefaultInstanceForType() {
+          return com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole build() {
+          com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole buildPartial() {
+          com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole result = new com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.roleId_ = roleId_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.roleName_ = roleName_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole) {
+            return mergeFrom((com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole other) {
+          if (other == com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole.getDefaultInstance()) return this;
+          if (other.getRoleId() != 0) {
+            setRoleId(other.getRoleId());
+          }
+          if (!other.getRoleName().isEmpty()) {
+            roleName_ = other.roleName_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  roleId_ = input.readInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+                case 18: {
+                  roleName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+        private int bitField0_;
+
+        private int roleId_ ;
+        /**
+         * <code>int32 roleId = 1;</code>
+         * @return The roleId.
+         */
+        @java.lang.Override
+        public int getRoleId() {
+          return roleId_;
+        }
+        /**
+         * <code>int32 roleId = 1;</code>
+         * @param value The roleId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRoleId(int value) {
+
+          roleId_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>int32 roleId = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearRoleId() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          roleId_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object roleName_ = "";
+        /**
+         * <code>string roleName = 2;</code>
+         * @return The roleName.
+         */
+        public java.lang.String getRoleName() {
+          java.lang.Object ref = roleName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            roleName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string roleName = 2;</code>
+         * @return The bytes for roleName.
+         */
+        public com.google.protobuf.ByteString
+            getRoleNameBytes() {
+          java.lang.Object ref = roleName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            roleName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string roleName = 2;</code>
+         * @param value The roleName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRoleName(
+            java.lang.String value) {
+          if (value == null) { throw new NullPointerException(); }
+          roleName_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string roleName = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearRoleName() {
+          roleName_ = getDefaultInstance().getRoleName();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string roleName = 2;</code>
+         * @param value The bytes for roleName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRoleNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) { throw new NullPointerException(); }
+          checkByteStringIsUtf8(value);
+          roleName_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:UserInfoResponse.UserInfoRole)
+      }
+
+      // @@protoc_insertion_point(class_scope:UserInfoResponse.UserInfoRole)
+      private static final com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole();
+      }
+
+      public static com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<UserInfoRole>
+          PARSER = new com.google.protobuf.AbstractParser<UserInfoRole>() {
+        @java.lang.Override
+        public UserInfoRole parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
+
+      public static com.google.protobuf.Parser<UserInfoRole> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<UserInfoRole> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public static final int USERINFOID_FIELD_NUMBER = 1;
+    private int userInfoId_ = 0;
+    /**
+     * <code>int32 userInfoId = 1;</code>
+     * @return The userInfoId.
+     */
+    @java.lang.Override
+    public int getUserInfoId() {
+      return userInfoId_;
+    }
+
+    public static final int USERNAME_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object username_ = "";
+    /**
+     * <code>string username = 2;</code>
+     * @return The username.
+     */
+    @java.lang.Override
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        username_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string username = 2;</code>
+     * @return The bytes for username.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        username_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USERINFOROLE_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private java.util.List<com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole> userInfoRole_;
+    /**
+     * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole> getUserInfoRoleList() {
+      return userInfoRole_;
+    }
+    /**
+     * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.rpc.grpc.UserService.UserInfoResponse.UserInfoRoleOrBuilder> 
+        getUserInfoRoleOrBuilderList() {
+      return userInfoRole_;
+    }
+    /**
+     * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+     */
+    @java.lang.Override
+    public int getUserInfoRoleCount() {
+      return userInfoRole_.size();
+    }
+    /**
+     * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+     */
+    @java.lang.Override
+    public com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole getUserInfoRole(int index) {
+      return userInfoRole_.get(index);
+    }
+    /**
+     * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+     */
+    @java.lang.Override
+    public com.rpc.grpc.UserService.UserInfoResponse.UserInfoRoleOrBuilder getUserInfoRoleOrBuilder(
+        int index) {
+      return userInfoRole_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (userInfoId_ != 0) {
+        output.writeInt32(1, userInfoId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, username_);
+      }
+      for (int i = 0; i < userInfoRole_.size(); i++) {
+        output.writeMessage(3, userInfoRole_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (userInfoId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, userInfoId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, username_);
+      }
+      for (int i = 0; i < userInfoRole_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, userInfoRole_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.rpc.grpc.UserService.UserInfoResponse)) {
+        return super.equals(obj);
+      }
+      com.rpc.grpc.UserService.UserInfoResponse other = (com.rpc.grpc.UserService.UserInfoResponse) obj;
+
+      if (getUserInfoId()
+          != other.getUserInfoId()) return false;
+      if (!getUsername()
+          .equals(other.getUsername())) return false;
+      if (!getUserInfoRoleList()
+          .equals(other.getUserInfoRoleList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USERINFOID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserInfoId();
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUsername().hashCode();
+      if (getUserInfoRoleCount() > 0) {
+        hash = (37 * hash) + USERINFOROLE_FIELD_NUMBER;
+        hash = (53 * hash) + getUserInfoRoleList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.rpc.grpc.UserService.UserInfoResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rpc.grpc.UserService.UserInfoResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rpc.grpc.UserService.UserInfoResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rpc.grpc.UserService.UserInfoResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rpc.grpc.UserService.UserInfoResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.rpc.grpc.UserService.UserInfoResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.rpc.grpc.UserService.UserInfoResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.rpc.grpc.UserService.UserInfoResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.rpc.grpc.UserService.UserInfoResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.rpc.grpc.UserService.UserInfoResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.rpc.grpc.UserService.UserInfoResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.rpc.grpc.UserService.UserInfoResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.rpc.grpc.UserService.UserInfoResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code UserInfoResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:UserInfoResponse)
+        com.rpc.grpc.UserService.UserInfoResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.rpc.grpc.UserService.internal_static_UserInfoResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.rpc.grpc.UserService.internal_static_UserInfoResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.rpc.grpc.UserService.UserInfoResponse.class, com.rpc.grpc.UserService.UserInfoResponse.Builder.class);
+      }
+
+      // Construct using com.rpc.grpc.UserService.UserInfoResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        userInfoId_ = 0;
+        username_ = "";
+        if (userInfoRoleBuilder_ == null) {
+          userInfoRole_ = java.util.Collections.emptyList();
+        } else {
+          userInfoRole_ = null;
+          userInfoRoleBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.rpc.grpc.UserService.internal_static_UserInfoResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.rpc.grpc.UserService.UserInfoResponse getDefaultInstanceForType() {
+        return com.rpc.grpc.UserService.UserInfoResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.rpc.grpc.UserService.UserInfoResponse build() {
+        com.rpc.grpc.UserService.UserInfoResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.rpc.grpc.UserService.UserInfoResponse buildPartial() {
+        com.rpc.grpc.UserService.UserInfoResponse result = new com.rpc.grpc.UserService.UserInfoResponse(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(com.rpc.grpc.UserService.UserInfoResponse result) {
+        if (userInfoRoleBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            userInfoRole_ = java.util.Collections.unmodifiableList(userInfoRole_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.userInfoRole_ = userInfoRole_;
+        } else {
+          result.userInfoRole_ = userInfoRoleBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.rpc.grpc.UserService.UserInfoResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.userInfoId_ = userInfoId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.username_ = username_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.rpc.grpc.UserService.UserInfoResponse) {
+          return mergeFrom((com.rpc.grpc.UserService.UserInfoResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.rpc.grpc.UserService.UserInfoResponse other) {
+        if (other == com.rpc.grpc.UserService.UserInfoResponse.getDefaultInstance()) return this;
+        if (other.getUserInfoId() != 0) {
+          setUserInfoId(other.getUserInfoId());
+        }
+        if (!other.getUsername().isEmpty()) {
+          username_ = other.username_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (userInfoRoleBuilder_ == null) {
+          if (!other.userInfoRole_.isEmpty()) {
+            if (userInfoRole_.isEmpty()) {
+              userInfoRole_ = other.userInfoRole_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureUserInfoRoleIsMutable();
+              userInfoRole_.addAll(other.userInfoRole_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.userInfoRole_.isEmpty()) {
+            if (userInfoRoleBuilder_.isEmpty()) {
+              userInfoRoleBuilder_.dispose();
+              userInfoRoleBuilder_ = null;
+              userInfoRole_ = other.userInfoRole_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              userInfoRoleBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getUserInfoRoleFieldBuilder() : null;
+            } else {
+              userInfoRoleBuilder_.addAllMessages(other.userInfoRole_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                userInfoId_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                username_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole m =
+                    input.readMessage(
+                        com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole.parser(),
+                        extensionRegistry);
+                if (userInfoRoleBuilder_ == null) {
+                  ensureUserInfoRoleIsMutable();
+                  userInfoRole_.add(m);
+                } else {
+                  userInfoRoleBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int userInfoId_ ;
+      /**
+       * <code>int32 userInfoId = 1;</code>
+       * @return The userInfoId.
+       */
+      @java.lang.Override
+      public int getUserInfoId() {
+        return userInfoId_;
+      }
+      /**
+       * <code>int32 userInfoId = 1;</code>
+       * @param value The userInfoId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserInfoId(int value) {
+
+        userInfoId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 userInfoId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserInfoId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        userInfoId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object username_ = "";
+      /**
+       * <code>string username = 2;</code>
+       * @return The username.
+       */
+      public java.lang.String getUsername() {
+        java.lang.Object ref = username_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          username_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string username = 2;</code>
+       * @return The bytes for username.
+       */
+      public com.google.protobuf.ByteString
+          getUsernameBytes() {
+        java.lang.Object ref = username_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          username_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string username = 2;</code>
+       * @param value The username to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUsername(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        username_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string username = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUsername() {
+        username_ = getDefaultInstance().getUsername();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string username = 2;</code>
+       * @param value The bytes for username to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUsernameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        username_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole> userInfoRole_ =
+        java.util.Collections.emptyList();
+      private void ensureUserInfoRoleIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          userInfoRole_ = new java.util.ArrayList<com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole>(userInfoRole_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole, com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole.Builder, com.rpc.grpc.UserService.UserInfoResponse.UserInfoRoleOrBuilder> userInfoRoleBuilder_;
+
+      /**
+       * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+       */
+      public java.util.List<com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole> getUserInfoRoleList() {
+        if (userInfoRoleBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(userInfoRole_);
+        } else {
+          return userInfoRoleBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+       */
+      public int getUserInfoRoleCount() {
+        if (userInfoRoleBuilder_ == null) {
+          return userInfoRole_.size();
+        } else {
+          return userInfoRoleBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+       */
+      public com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole getUserInfoRole(int index) {
+        if (userInfoRoleBuilder_ == null) {
+          return userInfoRole_.get(index);
+        } else {
+          return userInfoRoleBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+       */
+      public Builder setUserInfoRole(
+          int index, com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole value) {
+        if (userInfoRoleBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUserInfoRoleIsMutable();
+          userInfoRole_.set(index, value);
+          onChanged();
+        } else {
+          userInfoRoleBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+       */
+      public Builder setUserInfoRole(
+          int index, com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole.Builder builderForValue) {
+        if (userInfoRoleBuilder_ == null) {
+          ensureUserInfoRoleIsMutable();
+          userInfoRole_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          userInfoRoleBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+       */
+      public Builder addUserInfoRole(com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole value) {
+        if (userInfoRoleBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUserInfoRoleIsMutable();
+          userInfoRole_.add(value);
+          onChanged();
+        } else {
+          userInfoRoleBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+       */
+      public Builder addUserInfoRole(
+          int index, com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole value) {
+        if (userInfoRoleBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUserInfoRoleIsMutable();
+          userInfoRole_.add(index, value);
+          onChanged();
+        } else {
+          userInfoRoleBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+       */
+      public Builder addUserInfoRole(
+          com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole.Builder builderForValue) {
+        if (userInfoRoleBuilder_ == null) {
+          ensureUserInfoRoleIsMutable();
+          userInfoRole_.add(builderForValue.build());
+          onChanged();
+        } else {
+          userInfoRoleBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+       */
+      public Builder addUserInfoRole(
+          int index, com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole.Builder builderForValue) {
+        if (userInfoRoleBuilder_ == null) {
+          ensureUserInfoRoleIsMutable();
+          userInfoRole_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          userInfoRoleBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+       */
+      public Builder addAllUserInfoRole(
+          java.lang.Iterable<? extends com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole> values) {
+        if (userInfoRoleBuilder_ == null) {
+          ensureUserInfoRoleIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, userInfoRole_);
+          onChanged();
+        } else {
+          userInfoRoleBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+       */
+      public Builder clearUserInfoRole() {
+        if (userInfoRoleBuilder_ == null) {
+          userInfoRole_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          userInfoRoleBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+       */
+      public Builder removeUserInfoRole(int index) {
+        if (userInfoRoleBuilder_ == null) {
+          ensureUserInfoRoleIsMutable();
+          userInfoRole_.remove(index);
+          onChanged();
+        } else {
+          userInfoRoleBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+       */
+      public com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole.Builder getUserInfoRoleBuilder(
+          int index) {
+        return getUserInfoRoleFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+       */
+      public com.rpc.grpc.UserService.UserInfoResponse.UserInfoRoleOrBuilder getUserInfoRoleOrBuilder(
+          int index) {
+        if (userInfoRoleBuilder_ == null) {
+          return userInfoRole_.get(index);  } else {
+          return userInfoRoleBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+       */
+      public java.util.List<? extends com.rpc.grpc.UserService.UserInfoResponse.UserInfoRoleOrBuilder> 
+           getUserInfoRoleOrBuilderList() {
+        if (userInfoRoleBuilder_ != null) {
+          return userInfoRoleBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(userInfoRole_);
+        }
+      }
+      /**
+       * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+       */
+      public com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole.Builder addUserInfoRoleBuilder() {
+        return getUserInfoRoleFieldBuilder().addBuilder(
+            com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+       */
+      public com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole.Builder addUserInfoRoleBuilder(
+          int index) {
+        return getUserInfoRoleFieldBuilder().addBuilder(
+            index, com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .UserInfoResponse.UserInfoRole userInfoRole = 3;</code>
+       */
+      public java.util.List<com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole.Builder> 
+           getUserInfoRoleBuilderList() {
+        return getUserInfoRoleFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole, com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole.Builder, com.rpc.grpc.UserService.UserInfoResponse.UserInfoRoleOrBuilder> 
+          getUserInfoRoleFieldBuilder() {
+        if (userInfoRoleBuilder_ == null) {
+          userInfoRoleBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole, com.rpc.grpc.UserService.UserInfoResponse.UserInfoRole.Builder, com.rpc.grpc.UserService.UserInfoResponse.UserInfoRoleOrBuilder>(
+                  userInfoRole_,
+                  ((bitField0_ & 0x00000004) != 0),
+                  getParentForChildren(),
+                  isClean());
+          userInfoRole_ = null;
+        }
+        return userInfoRoleBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:UserInfoResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:UserInfoResponse)
+    private static final com.rpc.grpc.UserService.UserInfoResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.rpc.grpc.UserService.UserInfoResponse();
+    }
+
+    public static com.rpc.grpc.UserService.UserInfoResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UserInfoResponse>
+        PARSER = new com.google.protobuf.AbstractParser<UserInfoResponse>() {
+      @java.lang.Override
+      public UserInfoResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<UserInfoResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UserInfoResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.rpc.grpc.UserService.UserInfoResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_UserInfo_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_UserInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UserInfoResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UserInfoResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UserInfoResponse_UserInfoRole_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UserInfoResponse_UserInfoRole_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -654,10 +2290,14 @@ public final class UserService {
   static {
     java.lang.String[] descriptorData = {
       "\n\022user_service.proto\"0\n\010UserInfo\022\022\n\nuser" +
-      "InfoId\030\001 \001(\005\022\020\n\010username\030\002 \001(\t28\n\017UserIn" +
-      "foService\022%\n\013getUserInfo\022\t.UserInfo\032\t.Us" +
-      "erInfo\"\000B\035\n\014com.rpc.grpcB\013UserServiceP\000b" +
-      "\006proto3"
+      "InfoId\030\001 \001(\005\022\020\n\010username\030\002 \001(\t\"\240\001\n\020UserI" +
+      "nfoResponse\022\022\n\nuserInfoId\030\001 \001(\005\022\020\n\010usern" +
+      "ame\030\002 \001(\t\0224\n\014userInfoRole\030\003 \003(\0132\036.UserIn" +
+      "foResponse.UserInfoRole\0320\n\014UserInfoRole\022" +
+      "\016\n\006roleId\030\001 \001(\005\022\020\n\010roleName\030\002 \001(\t2@\n\017Use" +
+      "rInfoService\022-\n\013getUserInfo\022\t.UserInfo\032\021" +
+      ".UserInfoResponse\"\000B\035\n\014com.rpc.grpcB\013Use" +
+      "rServiceP\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -669,6 +2309,18 @@ public final class UserService {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UserInfo_descriptor,
         new java.lang.String[] { "UserInfoId", "Username", });
+    internal_static_UserInfoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_UserInfoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UserInfoResponse_descriptor,
+        new java.lang.String[] { "UserInfoId", "Username", "UserInfoRole", });
+    internal_static_UserInfoResponse_UserInfoRole_descriptor =
+      internal_static_UserInfoResponse_descriptor.getNestedTypes().get(0);
+    internal_static_UserInfoResponse_UserInfoRole_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UserInfoResponse_UserInfoRole_descriptor,
+        new java.lang.String[] { "RoleId", "RoleName", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

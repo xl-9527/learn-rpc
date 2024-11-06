@@ -16,28 +16,28 @@ public final class UserInfoServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.rpc.grpc.UserService.UserInfo,
-      com.rpc.grpc.UserService.UserInfo> getGetUserInfoMethod;
+      com.rpc.grpc.UserService.UserInfoResponse> getGetUserInfoMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getUserInfo",
       requestType = com.rpc.grpc.UserService.UserInfo.class,
-      responseType = com.rpc.grpc.UserService.UserInfo.class,
+      responseType = com.rpc.grpc.UserService.UserInfoResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.rpc.grpc.UserService.UserInfo,
-      com.rpc.grpc.UserService.UserInfo> getGetUserInfoMethod() {
-    io.grpc.MethodDescriptor<com.rpc.grpc.UserService.UserInfo, com.rpc.grpc.UserService.UserInfo> getGetUserInfoMethod;
+      com.rpc.grpc.UserService.UserInfoResponse> getGetUserInfoMethod() {
+    io.grpc.MethodDescriptor<com.rpc.grpc.UserService.UserInfo, com.rpc.grpc.UserService.UserInfoResponse> getGetUserInfoMethod;
     if ((getGetUserInfoMethod = UserInfoServiceGrpc.getGetUserInfoMethod) == null) {
       synchronized (UserInfoServiceGrpc.class) {
         if ((getGetUserInfoMethod = UserInfoServiceGrpc.getGetUserInfoMethod) == null) {
           UserInfoServiceGrpc.getGetUserInfoMethod = getGetUserInfoMethod =
-              io.grpc.MethodDescriptor.<com.rpc.grpc.UserService.UserInfo, com.rpc.grpc.UserService.UserInfo>newBuilder()
+              io.grpc.MethodDescriptor.<com.rpc.grpc.UserService.UserInfo, com.rpc.grpc.UserService.UserInfoResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getUserInfo"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.rpc.grpc.UserService.UserInfo.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.rpc.grpc.UserService.UserInfo.getDefaultInstance()))
+                  com.rpc.grpc.UserService.UserInfoResponse.getDefaultInstance()))
               .setSchemaDescriptor(new UserInfoServiceMethodDescriptorSupplier("getUserInfo"))
               .build();
         }
@@ -97,7 +97,7 @@ public final class UserInfoServiceGrpc {
     /**
      */
     default void getUserInfo(com.rpc.grpc.UserService.UserInfo request,
-        io.grpc.stub.StreamObserver<com.rpc.grpc.UserService.UserInfo> responseObserver) {
+        io.grpc.stub.StreamObserver<com.rpc.grpc.UserService.UserInfoResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetUserInfoMethod(), responseObserver);
     }
   }
@@ -132,7 +132,7 @@ public final class UserInfoServiceGrpc {
     /**
      */
     public void getUserInfo(com.rpc.grpc.UserService.UserInfo request,
-        io.grpc.stub.StreamObserver<com.rpc.grpc.UserService.UserInfo> responseObserver) {
+        io.grpc.stub.StreamObserver<com.rpc.grpc.UserService.UserInfoResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetUserInfoMethod(), getCallOptions()), request, responseObserver);
     }
@@ -156,7 +156,7 @@ public final class UserInfoServiceGrpc {
 
     /**
      */
-    public com.rpc.grpc.UserService.UserInfo getUserInfo(com.rpc.grpc.UserService.UserInfo request) {
+    public com.rpc.grpc.UserService.UserInfoResponse getUserInfo(com.rpc.grpc.UserService.UserInfo request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetUserInfoMethod(), getCallOptions(), request);
     }
@@ -180,7 +180,7 @@ public final class UserInfoServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.rpc.grpc.UserService.UserInfo> getUserInfo(
+    public com.google.common.util.concurrent.ListenableFuture<com.rpc.grpc.UserService.UserInfoResponse> getUserInfo(
         com.rpc.grpc.UserService.UserInfo request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetUserInfoMethod(), getCallOptions()), request);
@@ -208,7 +208,7 @@ public final class UserInfoServiceGrpc {
       switch (methodId) {
         case METHODID_GET_USER_INFO:
           serviceImpl.getUserInfo((com.rpc.grpc.UserService.UserInfo) request,
-              (io.grpc.stub.StreamObserver<com.rpc.grpc.UserService.UserInfo>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.rpc.grpc.UserService.UserInfoResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -233,7 +233,7 @@ public final class UserInfoServiceGrpc {
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               com.rpc.grpc.UserService.UserInfo,
-              com.rpc.grpc.UserService.UserInfo>(
+              com.rpc.grpc.UserService.UserInfoResponse>(
                 service, METHODID_GET_USER_INFO)))
         .build();
   }

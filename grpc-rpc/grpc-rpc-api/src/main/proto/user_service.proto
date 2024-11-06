@@ -10,6 +10,16 @@ message UserInfo {
   string username = 2;
 }
 
+message UserInfoResponse {
+  message UserInfoRole {
+    int32 roleId = 1;
+    string roleName = 2;
+  }
+  int32 userInfoId = 1;
+  string username = 2;
+  repeated UserInfoRole userInfoRole = 3;
+}
+
 service UserInfoService {
-  rpc getUserInfo(UserInfo) returns(UserInfo) {}
+  rpc getUserInfo(UserInfo) returns(UserInfoResponse) {}
 }
