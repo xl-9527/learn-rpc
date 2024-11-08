@@ -22,4 +22,6 @@ message UserInfoResponse {
 
 service UserInfoService {
   rpc getUserInfo(UserInfo) returns(UserInfoResponse) {}
+
+  rpc getStreamingResponseWIthUserInfo(UserInfo) returns(stream UserInfoResponse) {}
 }

@@ -2294,10 +2294,12 @@ public final class UserService {
       "nfoResponse\022\022\n\nuserInfoId\030\001 \001(\005\022\020\n\010usern" +
       "ame\030\002 \001(\t\0224\n\014userInfoRole\030\003 \003(\0132\036.UserIn" +
       "foResponse.UserInfoRole\0320\n\014UserInfoRole\022" +
-      "\016\n\006roleId\030\001 \001(\005\022\020\n\010roleName\030\002 \001(\t2@\n\017Use" +
-      "rInfoService\022-\n\013getUserInfo\022\t.UserInfo\032\021" +
-      ".UserInfoResponse\"\000B\035\n\014com.rpc.grpcB\013Use" +
-      "rServiceP\000b\006proto3"
+      "\016\n\006roleId\030\001 \001(\005\022\020\n\010roleName\030\002 \001(\t2\206\001\n\017Us" +
+      "erInfoService\022-\n\013getUserInfo\022\t.UserInfo\032" +
+      "\021.UserInfoResponse\"\000\022D\n getStreamingResp" +
+      "onseWIthUserInfo\022\t.UserInfo\032\021.UserInfoRe" +
+      "sponse\"\0000\001B\035\n\014com.rpc.grpcB\013UserServiceP" +
+      "\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

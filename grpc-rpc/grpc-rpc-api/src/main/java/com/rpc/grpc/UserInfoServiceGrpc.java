@@ -46,6 +46,37 @@ public final class UserInfoServiceGrpc {
     return getGetUserInfoMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.rpc.grpc.UserService.UserInfo,
+      com.rpc.grpc.UserService.UserInfoResponse> getGetStreamingResponseWIthUserInfoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "getStreamingResponseWIthUserInfo",
+      requestType = com.rpc.grpc.UserService.UserInfo.class,
+      responseType = com.rpc.grpc.UserService.UserInfoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<com.rpc.grpc.UserService.UserInfo,
+      com.rpc.grpc.UserService.UserInfoResponse> getGetStreamingResponseWIthUserInfoMethod() {
+    io.grpc.MethodDescriptor<com.rpc.grpc.UserService.UserInfo, com.rpc.grpc.UserService.UserInfoResponse> getGetStreamingResponseWIthUserInfoMethod;
+    if ((getGetStreamingResponseWIthUserInfoMethod = UserInfoServiceGrpc.getGetStreamingResponseWIthUserInfoMethod) == null) {
+      synchronized (UserInfoServiceGrpc.class) {
+        if ((getGetStreamingResponseWIthUserInfoMethod = UserInfoServiceGrpc.getGetStreamingResponseWIthUserInfoMethod) == null) {
+          UserInfoServiceGrpc.getGetStreamingResponseWIthUserInfoMethod = getGetStreamingResponseWIthUserInfoMethod =
+              io.grpc.MethodDescriptor.<com.rpc.grpc.UserService.UserInfo, com.rpc.grpc.UserService.UserInfoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getStreamingResponseWIthUserInfo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.rpc.grpc.UserService.UserInfo.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.rpc.grpc.UserService.UserInfoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserInfoServiceMethodDescriptorSupplier("getStreamingResponseWIthUserInfo"))
+              .build();
+        }
+      }
+    }
+    return getGetStreamingResponseWIthUserInfoMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -100,6 +131,13 @@ public final class UserInfoServiceGrpc {
         io.grpc.stub.StreamObserver<com.rpc.grpc.UserService.UserInfoResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetUserInfoMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void getStreamingResponseWIthUserInfo(com.rpc.grpc.UserService.UserInfo request,
+        io.grpc.stub.StreamObserver<com.rpc.grpc.UserService.UserInfoResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetStreamingResponseWIthUserInfoMethod(), responseObserver);
+    }
   }
 
   /**
@@ -136,6 +174,14 @@ public final class UserInfoServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetUserInfoMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getStreamingResponseWIthUserInfo(com.rpc.grpc.UserService.UserInfo request,
+        io.grpc.stub.StreamObserver<com.rpc.grpc.UserService.UserInfoResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
+          getChannel().newCall(getGetStreamingResponseWIthUserInfoMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -159,6 +205,14 @@ public final class UserInfoServiceGrpc {
     public com.rpc.grpc.UserService.UserInfoResponse getUserInfo(com.rpc.grpc.UserService.UserInfo request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetUserInfoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.util.Iterator<com.rpc.grpc.UserService.UserInfoResponse> getStreamingResponseWIthUserInfo(
+        com.rpc.grpc.UserService.UserInfo request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
+          getChannel(), getGetStreamingResponseWIthUserInfoMethod(), getCallOptions(), request);
     }
   }
 
@@ -188,6 +242,7 @@ public final class UserInfoServiceGrpc {
   }
 
   private static final int METHODID_GET_USER_INFO = 0;
+  private static final int METHODID_GET_STREAMING_RESPONSE_WITH_USER_INFO = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -208,6 +263,10 @@ public final class UserInfoServiceGrpc {
       switch (methodId) {
         case METHODID_GET_USER_INFO:
           serviceImpl.getUserInfo((com.rpc.grpc.UserService.UserInfo) request,
+              (io.grpc.stub.StreamObserver<com.rpc.grpc.UserService.UserInfoResponse>) responseObserver);
+          break;
+        case METHODID_GET_STREAMING_RESPONSE_WITH_USER_INFO:
+          serviceImpl.getStreamingResponseWIthUserInfo((com.rpc.grpc.UserService.UserInfo) request,
               (io.grpc.stub.StreamObserver<com.rpc.grpc.UserService.UserInfoResponse>) responseObserver);
           break;
         default:
@@ -235,6 +294,13 @@ public final class UserInfoServiceGrpc {
               com.rpc.grpc.UserService.UserInfo,
               com.rpc.grpc.UserService.UserInfoResponse>(
                 service, METHODID_GET_USER_INFO)))
+        .addMethod(
+          getGetStreamingResponseWIthUserInfoMethod(),
+          io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+            new MethodHandlers<
+              com.rpc.grpc.UserService.UserInfo,
+              com.rpc.grpc.UserService.UserInfoResponse>(
+                service, METHODID_GET_STREAMING_RESPONSE_WITH_USER_INFO)))
         .build();
   }
 
@@ -284,6 +350,7 @@ public final class UserInfoServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new UserInfoServiceFileDescriptorSupplier())
               .addMethod(getGetUserInfoMethod())
+              .addMethod(getGetStreamingResponseWIthUserInfoMethod())
               .build();
         }
       }

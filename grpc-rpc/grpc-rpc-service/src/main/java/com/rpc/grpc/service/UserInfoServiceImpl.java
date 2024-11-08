@@ -7,6 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author xl-9527
@@ -37,5 +39,33 @@ public class UserInfoServiceImpl extends UserInfoServiceGrpc.UserInfoServiceImpl
         // 响应封装的数据
         responseObserver.onNext(builder.build());
         responseObserver.onCompleted();
+    }
+
+    @Override
+    public void getStreamingResponseWIthUserInfo(final UserService.UserInfo request, final StreamObserver<UserService.UserInfoResponse> responseObserver) {
+        final String username = request.getUsername();
+        final int userInfoId = request.getUserInfoId();
+        log.info("streaming 服务方法收到客户端的消息 username -> {}, userInfoId -> {}", username, userInfoId);
+
+        // 开始分批分期的响应数据给哦客户端
+        try {
+            responseObserver.onNext(UserService.UserInfoResponse.newBuilder().setUserInfoId(1).setUsername(UUID.randomUUID().toString()).build());
+            TimeUnit.SECONDS.sleep(1);
+            log.info("开始发送第 [{}] 批", 2);
+            responseObserver.onNext(UserService.UserInfoResponse.newBuilder().setUserInfoId(2).setUsername(UUID.randomUUID().toString()).build());
+            TimeUnit.SECONDS.sleep(10);
+            log.info("开始发送第 [{}] 批", 3);
+            responseObserver.onNext(UserService.UserInfoResponse.newBuilder().setUserInfoId(3).setUsername(UUID.randomUUID().toString()).build());
+            TimeUnit.SECONDS.sleep(1);
+            log.info("开始发送第 [{}] 批", 4);
+            responseObserver.onNext(UserService.UserInfoResponse.newBuilder().setUserInfoId(4).setUsername(UUID.randomUUID().toString()).build());
+            TimeUnit.SECONDS.sleep(1);
+            log.info("开始发送第 [{}] 批", 5);
+            responseObserver.onNext(UserService.UserInfoResponse.newBuilder().setUserInfoId(5).setUsername(UUID.randomUUID().toString()).build());
+        } catch (Exception e) {
+            log.error("", e);
+        } finally {
+            responseObserver.onCompleted();
+        }
     }
 }
