@@ -20,8 +20,20 @@ message UserInfoResponse {
   repeated UserInfoRole userInfoRole = 3;
 }
 
+message ChatMessage {
+  string content = 1;
+  int32 ccId = 2;
+}
+
+service UserInfoChat {
+  rpc startChat(stream ChatMessage) returns (stream ChatMessage) {}
+}
+
 service UserInfoService {
   rpc getUserInfo(UserInfo) returns(UserInfoResponse) {}
 
   rpc getStreamingResponseWIthUserInfo(UserInfo) returns(stream UserInfoResponse) {}
+
+  rpc batchGetUserInfo(stream UserInfo) returns (stream UserInfoResponse) {}
+
 }

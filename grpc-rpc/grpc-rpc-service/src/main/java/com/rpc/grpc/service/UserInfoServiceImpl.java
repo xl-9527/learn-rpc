@@ -19,6 +19,33 @@ public class UserInfoServiceImpl extends UserInfoServiceGrpc.UserInfoServiceImpl
     private final Logger log = LoggerFactory.getLogger(UserInfoServiceImpl.class);
 
     @Override
+    public StreamObserver<UserService.UserInfo> batchGetUserInfo(final StreamObserver<UserService.UserInfoResponse> responseObserver) {
+        return new StreamObserver<>() {
+            @Override
+            public void onNext(final UserService.UserInfo userInfo) {
+                log.info("accept data from client [username -> {}, user_id -> {}]", userInfo.getUsername(), userInfo.getUserInfoId());
+            }
+
+            @Override
+            public void onError(final Throwable throwable) {
+                log.error("an exception occurred during client and server interaction", throwable);
+            }
+
+            @Override
+            public void onCompleted() {
+                log.info("请求端 stream 结束");
+                responseObserver.onNext(
+                        UserService.UserInfoResponse.newBuilder()
+                                .setUsername("Tom")
+                                .setUserInfoId(9)
+                                .build()
+                );
+                responseObserver.onCompleted();
+            }
+        };
+    }
+
+    @Override
     public void getUserInfo(final UserService.UserInfo request, final StreamObserver<UserService.UserInfoResponse> responseObserver) {
         final int userInfoId = request.getUserInfoId();
         final String username = request.getUsername();

@@ -77,6 +77,37 @@ public final class UserInfoServiceGrpc {
     return getGetStreamingResponseWIthUserInfoMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.rpc.grpc.UserService.UserInfo,
+      com.rpc.grpc.UserService.UserInfoResponse> getBatchGetUserInfoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "batchGetUserInfo",
+      requestType = com.rpc.grpc.UserService.UserInfo.class,
+      responseType = com.rpc.grpc.UserService.UserInfoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<com.rpc.grpc.UserService.UserInfo,
+      com.rpc.grpc.UserService.UserInfoResponse> getBatchGetUserInfoMethod() {
+    io.grpc.MethodDescriptor<com.rpc.grpc.UserService.UserInfo, com.rpc.grpc.UserService.UserInfoResponse> getBatchGetUserInfoMethod;
+    if ((getBatchGetUserInfoMethod = UserInfoServiceGrpc.getBatchGetUserInfoMethod) == null) {
+      synchronized (UserInfoServiceGrpc.class) {
+        if ((getBatchGetUserInfoMethod = UserInfoServiceGrpc.getBatchGetUserInfoMethod) == null) {
+          UserInfoServiceGrpc.getBatchGetUserInfoMethod = getBatchGetUserInfoMethod =
+              io.grpc.MethodDescriptor.<com.rpc.grpc.UserService.UserInfo, com.rpc.grpc.UserService.UserInfoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "batchGetUserInfo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.rpc.grpc.UserService.UserInfo.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.rpc.grpc.UserService.UserInfoResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserInfoServiceMethodDescriptorSupplier("batchGetUserInfo"))
+              .build();
+        }
+      }
+    }
+    return getBatchGetUserInfoMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -138,6 +169,13 @@ public final class UserInfoServiceGrpc {
         io.grpc.stub.StreamObserver<com.rpc.grpc.UserService.UserInfoResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetStreamingResponseWIthUserInfoMethod(), responseObserver);
     }
+
+    /**
+     */
+    default io.grpc.stub.StreamObserver<com.rpc.grpc.UserService.UserInfo> batchGetUserInfo(
+        io.grpc.stub.StreamObserver<com.rpc.grpc.UserService.UserInfoResponse> responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getBatchGetUserInfoMethod(), responseObserver);
+    }
   }
 
   /**
@@ -181,6 +219,14 @@ public final class UserInfoServiceGrpc {
         io.grpc.stub.StreamObserver<com.rpc.grpc.UserService.UserInfoResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getGetStreamingResponseWIthUserInfoMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.rpc.grpc.UserService.UserInfo> batchGetUserInfo(
+        io.grpc.stub.StreamObserver<com.rpc.grpc.UserService.UserInfoResponse> responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+          getChannel().newCall(getBatchGetUserInfoMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -243,6 +289,7 @@ public final class UserInfoServiceGrpc {
 
   private static final int METHODID_GET_USER_INFO = 0;
   private static final int METHODID_GET_STREAMING_RESPONSE_WITH_USER_INFO = 1;
+  private static final int METHODID_BATCH_GET_USER_INFO = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -279,6 +326,9 @@ public final class UserInfoServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_BATCH_GET_USER_INFO:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.batchGetUserInfo(
+              (io.grpc.stub.StreamObserver<com.rpc.grpc.UserService.UserInfoResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -301,6 +351,13 @@ public final class UserInfoServiceGrpc {
               com.rpc.grpc.UserService.UserInfo,
               com.rpc.grpc.UserService.UserInfoResponse>(
                 service, METHODID_GET_STREAMING_RESPONSE_WITH_USER_INFO)))
+        .addMethod(
+          getBatchGetUserInfoMethod(),
+          io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+            new MethodHandlers<
+              com.rpc.grpc.UserService.UserInfo,
+              com.rpc.grpc.UserService.UserInfoResponse>(
+                service, METHODID_BATCH_GET_USER_INFO)))
         .build();
   }
 
@@ -351,6 +408,7 @@ public final class UserInfoServiceGrpc {
               .setSchemaDescriptor(new UserInfoServiceFileDescriptorSupplier())
               .addMethod(getGetUserInfoMethod())
               .addMethod(getGetStreamingResponseWIthUserInfoMethod())
+              .addMethod(getBatchGetUserInfoMethod())
               .build();
         }
       }
