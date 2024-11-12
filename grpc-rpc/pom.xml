@@ -16,6 +16,7 @@
         <module>grpc-rpc-api</module>
         <module>grpc-rpc-service</module>
         <module>grpc-rpc-client</module>
+        <module>grpc-rpc-boot-server</module>
     </modules>
 
     <properties>
