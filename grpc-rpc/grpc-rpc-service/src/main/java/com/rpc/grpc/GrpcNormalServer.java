@@ -1,5 +1,7 @@
 package com.rpc.grpc;
 
+import com.rpc.grpc.service.BiServiceImpl;
+import com.rpc.grpc.service.NewBiServiceImpl;
 import com.rpc.grpc.service.UserInfoServiceImpl;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
@@ -15,7 +17,9 @@ public class GrpcNormalServer {
     public static void main(String[] args) throws IOException, InterruptedException {
         // 绑定端口 & service
         final ServerBuilder<?> builder = ServerBuilder.forPort(8888)
-                .addService(new UserInfoServiceImpl());
+                .addService(new UserInfoServiceImpl())
+                .addService(new BiServiceImpl())
+                .addService(new NewBiServiceImpl());
 
         final Server server = builder.build();
 

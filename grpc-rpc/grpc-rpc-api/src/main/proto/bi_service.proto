@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_package = "com.rpc.grpc.bi";
+option java_multiple_files = false;
+option java_outer_classname = "BiService";
+
+message OnceMessageRequest {
+  string content = 1;
+}
+
+message OnceMessageResponse {
+  string content = 1;
+}
+
+service BiRpcService {
+  // 注意这里因为我们使用 future 的方式来通讯，这就不可以使用 stream，只能使用简单的 rpc
+  rpc getOnceMessage(OnceMessageRequest) returns (OnceMessageResponse) {}
+}
+
+service NewBiRpcService {
+  // 注意这里因为我们使用 future 的方式来通讯，这就不可以使用 stream，只能使用简单的 rpc
+  rpc newGetOnceMessage(OnceMessageRequest) returns (OnceMessageResponse) {}
+}

@@ -30,10 +30,10 @@ service UserInfoChat {
 }
 
 service UserInfoService {
+
   rpc getUserInfo(UserInfo) returns(UserInfoResponse) {}
 
   rpc getStreamingResponseWIthUserInfo(UserInfo) returns(stream UserInfoResponse) {}
 
   rpc batchGetUserInfo(stream UserInfo) returns (stream UserInfoResponse) {}
-
 }

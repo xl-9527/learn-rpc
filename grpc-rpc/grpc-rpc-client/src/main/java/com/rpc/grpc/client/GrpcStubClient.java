@@ -17,7 +17,7 @@ import java.util.random.RandomGenerator;
  * @since 2024/11/9
  **/
 @Slf4j
-public class GrpcFutureClient {
+public class GrpcStubClient {
 
     public static void main(String[] args) throws InterruptedException {
         final ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 8888)
