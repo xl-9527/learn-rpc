@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: grpc-rpc-boot-client
+grpc:
+  client:
+    bi_server:
+      address: static://localhost:8888
+      negotiation-type: plaintext
+
+server:
+  port: 8989

@@ -22,7 +22,7 @@ public class OnceMessageServiceImpl extends BiRpcServiceGrpc.BiRpcServiceImplBas
     public void getOnceMessage(final BiService.OnceMessageRequest request, final StreamObserver<BiService.OnceMessageResponse> responseObserver) {
         log.info("receive client request msg -> {}", request.getContent());
         responseObserver.onNext(
-                BiService.OnceMessageResponse.newBuilder().setContent(UUID.randomUUID().toString()).build()
+                BiService.OnceMessageResponse.newBuilder().setContent("我收到了你的消息 -> 【" + request.getContent() + "】").build()
         );
         responseObserver.onCompleted();
     }
