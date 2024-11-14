@@ -70,6 +70,12 @@ public class CustomGrpcIntercept implements ClientInterceptor {
             super(delegate);
         }
 
+        @Override
+        public void onReady() {
+            log.info("onRead is invoke");
+            super.onReady();
+        }
+
         /**
          * 服务端收到消息机会调用，具体的执行时机是服务端调用 onComplete 以后这个 onMessage 就会执行，服务端的 onComplete 对应的就是 netty 中的 writeAndFlush 方法
          */
