@@ -7,8 +7,6 @@ import net.devh.boot.grpc.server.service.GrpcService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.UUID;
-
 /**
  * @author xl-9527
  * @since 2024/11/12
