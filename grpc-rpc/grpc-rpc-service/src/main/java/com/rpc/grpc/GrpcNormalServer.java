@@ -3,6 +3,7 @@ package com.rpc.grpc;
 import com.rpc.grpc.service.BiServiceImpl;
 import com.rpc.grpc.service.NewBiServiceImpl;
 import com.rpc.grpc.service.UserInfoServiceImpl;
+import com.rpc.grpc.service.intercept.CustomServerIntercept;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 
@@ -20,6 +21,9 @@ public class GrpcNormalServer {
                 .addService(new UserInfoServiceImpl())
                 .addService(new BiServiceImpl())
                 .addService(new NewBiServiceImpl());
+
+        // 添加拦截器
+        builder.intercept(new CustomServerIntercept());
 
         final Server server = builder.build();
 

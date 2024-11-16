@@ -18,7 +18,7 @@ public class BiServiceImpl extends BiRpcServiceGrpc.BiRpcServiceImplBase {
 
     @Override
     public void getOnceMessage(final BiService.OnceMessageRequest request, final StreamObserver<BiService.OnceMessageResponse> responseObserver) {
-        log.info("receive client msg, content -> {}", request.getContent());
+        log.warn("receive client msg, content -> {}", request.getContent());
         // 响应客户端消息
         try {
             responseObserver.onNext(
@@ -27,11 +27,6 @@ public class BiServiceImpl extends BiRpcServiceGrpc.BiRpcServiceImplBase {
                             .build()
             );
         } finally {
-            responseObserver.onNext(
-                    BiService.OnceMessageResponse.newBuilder()
-                            .setContent("server is will close " + UUID.randomUUID())
-                            .build()
-            );
             responseObserver.onCompleted();
         }
     }
