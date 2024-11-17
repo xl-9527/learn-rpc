@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_multiple_files = false;
+option java_outer_classname = "StreamingBiServiceProto";
+option java_package = "com.rpc.grpc.bi";
+
+message StreamingBiMessageReq {string content = 1;}
+message StreamingBiMessageResp {string content = 1;}
+
+service StreamBiServer {
+  rpc getMessages(stream StreamingBiMessageReq) returns (stream StreamingBiMessageResp);
+}
