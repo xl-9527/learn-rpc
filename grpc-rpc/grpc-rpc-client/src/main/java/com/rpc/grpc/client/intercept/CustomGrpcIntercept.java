@@ -12,6 +12,8 @@ public class CustomGrpcIntercept implements ClientInterceptor {
 
     @Override
     public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(final MethodDescriptor<ReqT, RespT> methodDescriptor, final CallOptions callOptions, final Channel channel) {
+        log.info("拦截到了客户端的请求，这个请求只会在客户端发起请求的时候拦截，并不会拦截响应的请求");
+        // return channel.newCall(methodDescriptor, callOptions);
         return new CustomClientCall<>(channel.newCall(methodDescriptor, callOptions));
     }
 
@@ -31,6 +33,7 @@ public class CustomGrpcIntercept implements ClientInterceptor {
         protected void checkedStart(final Listener<RespT> listener, final Metadata metadata) throws Exception {
             // do invoke request
             delegate().start(new CustomClientCallListener<>(listener), metadata);
+            // delegate().start(listener, metadata);
         }
 
         /**
@@ -64,6 +67,7 @@ public class CustomGrpcIntercept implements ClientInterceptor {
     /**
      * 自定义 GRPC 客户端拦截器监听器
      */
+    @Slf4j
     static class CustomClientCallListener<RespT> extends ForwardingClientCallListener.SimpleForwardingClientCallListener<RespT> {
 
         protected CustomClientCallListener(final ClientCall.Listener<RespT> delegate) {
@@ -81,6 +85,7 @@ public class CustomGrpcIntercept implements ClientInterceptor {
          */
         @Override
         public void onMessage(final RespT message) {
+            log.info("服务端收到消息机会调用，具体的执行时机是服务端调用 onComplete 以后这个 onMessage 就会执行，服务端的 onComplete 对应的就是 netty 中的 writeAndFlush 方法");
             super.onMessage(message);
         }
 
@@ -89,6 +94,7 @@ public class CustomGrpcIntercept implements ClientInterceptor {
          */
         @Override
         public void onHeaders(final Metadata headers) {
+            log.info("当服务端执行完成以后 onNext 客户端拦截器这个 onHead 就会被调用");
             super.onHeaders(headers);
         }
     }

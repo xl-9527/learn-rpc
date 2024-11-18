@@ -5,6 +5,7 @@ import com.rpc.grpc.service.NewBiServiceImpl;
 import com.rpc.grpc.service.StreamingBiServiceImpl;
 import com.rpc.grpc.service.UserInfoServiceImpl;
 import com.rpc.grpc.service.intercept.CustomServerIntercept;
+import com.rpc.grpc.service.trace.CustomStreamingServerTrace;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 
@@ -25,7 +26,8 @@ public class GrpcNormalServer {
                 .addService(new NewBiServiceImpl());
 
         // 添加拦截器
-        //builder.intercept(new CustomServerIntercept());
+        builder.intercept(new CustomServerIntercept());
+        builder.addStreamTracerFactory(new CustomStreamingServerTrace.CustomSeverStreamingTraceFactory());
 
         final Server server = builder.build();
 
