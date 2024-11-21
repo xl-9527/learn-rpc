@@ -1,7 +1,19 @@
 {
-  "config": {
-    "name": {
-
+  "methodConfig": [
+    {
+      "name": {
+        "service": "",
+        "method": ""
+      },
+      "retryPolicy": {
+        "maxAttempts": 5,
+        "initialBackoff": "0.5s",
+        "maxBackoff": "30s",
+        "backoffMultiplier": 1.5,
+        "retryableStatusCodes": [
+          "UNAVAILABLE"
+        ]
+      }
     }
-  }
+  ]
 }
