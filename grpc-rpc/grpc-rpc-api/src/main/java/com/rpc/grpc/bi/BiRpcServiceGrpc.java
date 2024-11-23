@@ -12,7 +12,7 @@ public final class BiRpcServiceGrpc {
 
   private BiRpcServiceGrpc() {}
 
-  public static final java.lang.String SERVICE_NAME = "BiRpcService";
+  public static final java.lang.String SERVICE_NAME = "com.rpc.grpc.bi.BiRpcService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.rpc.grpc.bi.BiService.OnceMessageRequest,

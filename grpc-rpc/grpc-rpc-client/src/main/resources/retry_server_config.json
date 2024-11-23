@@ -1,14 +1,16 @@
 {
   "methodConfig": [
     {
-      "name": {
-        "service": "",
-        "method": ""
-      },
+      "name": [
+        {
+          "service": "com.rpc.grpc.bi.BiRpcService",
+          "method": "getOnceMessage"
+        }
+      ],
       "retryPolicy": {
-        "maxAttempts": 5,
-        "initialBackoff": "0.5s",
-        "maxBackoff": "30s",
+        "maxAttempts": 5.0,
+        "initialBackoff": "0.1s",
+        "maxBackoff": "1s",
         "backoffMultiplier": 1.5,
         "retryableStatusCodes": [
           "UNAVAILABLE"

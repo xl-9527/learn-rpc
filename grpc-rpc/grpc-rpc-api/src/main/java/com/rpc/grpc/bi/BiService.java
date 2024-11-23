@@ -16,7 +16,7 @@ public final class BiService {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface OnceMessageRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:OnceMessageRequest)
+      // @@protoc_insertion_point(interface_extends:com.rpc.grpc.bi.OnceMessageRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -32,11 +32,11 @@ public final class BiService {
         getContentBytes();
   }
   /**
-   * Protobuf type {@code OnceMessageRequest}
+   * Protobuf type {@code com.rpc.grpc.bi.OnceMessageRequest}
    */
   public static final class OnceMessageRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:OnceMessageRequest)
+      // @@protoc_insertion_point(message_implements:com.rpc.grpc.bi.OnceMessageRequest)
       OnceMessageRequestOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use OnceMessageRequest.newBuilder() to construct.
@@ -56,13 +56,13 @@ public final class BiService {
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.rpc.grpc.bi.BiService.internal_static_OnceMessageRequest_descriptor;
+      return com.rpc.grpc.bi.BiService.internal_static_com_rpc_grpc_bi_OnceMessageRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.rpc.grpc.bi.BiService.internal_static_OnceMessageRequest_fieldAccessorTable
+      return com.rpc.grpc.bi.BiService.internal_static_com_rpc_grpc_bi_OnceMessageRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.rpc.grpc.bi.BiService.OnceMessageRequest.class, com.rpc.grpc.bi.BiService.OnceMessageRequest.Builder.class);
     }
@@ -263,21 +263,21 @@ public final class BiService {
       return builder;
     }
     /**
-     * Protobuf type {@code OnceMessageRequest}
+     * Protobuf type {@code com.rpc.grpc.bi.OnceMessageRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:OnceMessageRequest)
+        // @@protoc_insertion_point(builder_implements:com.rpc.grpc.bi.OnceMessageRequest)
         com.rpc.grpc.bi.BiService.OnceMessageRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.rpc.grpc.bi.BiService.internal_static_OnceMessageRequest_descriptor;
+        return com.rpc.grpc.bi.BiService.internal_static_com_rpc_grpc_bi_OnceMessageRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.rpc.grpc.bi.BiService.internal_static_OnceMessageRequest_fieldAccessorTable
+        return com.rpc.grpc.bi.BiService.internal_static_com_rpc_grpc_bi_OnceMessageRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.rpc.grpc.bi.BiService.OnceMessageRequest.class, com.rpc.grpc.bi.BiService.OnceMessageRequest.Builder.class);
       }
@@ -303,7 +303,7 @@ public final class BiService {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.rpc.grpc.bi.BiService.internal_static_OnceMessageRequest_descriptor;
+        return com.rpc.grpc.bi.BiService.internal_static_com_rpc_grpc_bi_OnceMessageRequest_descriptor;
       }
 
       @java.lang.Override
@@ -516,10 +516,10 @@ public final class BiService {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:OnceMessageRequest)
+      // @@protoc_insertion_point(builder_scope:com.rpc.grpc.bi.OnceMessageRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:OnceMessageRequest)
+    // @@protoc_insertion_point(class_scope:com.rpc.grpc.bi.OnceMessageRequest)
     private static final com.rpc.grpc.bi.BiService.OnceMessageRequest DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.rpc.grpc.bi.BiService.OnceMessageRequest();
@@ -568,7 +568,7 @@ public final class BiService {
   }
 
   public interface OnceMessageResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:OnceMessageResponse)
+      // @@protoc_insertion_point(interface_extends:com.rpc.grpc.bi.OnceMessageResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -584,11 +584,11 @@ public final class BiService {
         getContentBytes();
   }
   /**
-   * Protobuf type {@code OnceMessageResponse}
+   * Protobuf type {@code com.rpc.grpc.bi.OnceMessageResponse}
    */
   public static final class OnceMessageResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:OnceMessageResponse)
+      // @@protoc_insertion_point(message_implements:com.rpc.grpc.bi.OnceMessageResponse)
       OnceMessageResponseOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use OnceMessageResponse.newBuilder() to construct.
@@ -608,13 +608,13 @@ public final class BiService {
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.rpc.grpc.bi.BiService.internal_static_OnceMessageResponse_descriptor;
+      return com.rpc.grpc.bi.BiService.internal_static_com_rpc_grpc_bi_OnceMessageResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.rpc.grpc.bi.BiService.internal_static_OnceMessageResponse_fieldAccessorTable
+      return com.rpc.grpc.bi.BiService.internal_static_com_rpc_grpc_bi_OnceMessageResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.rpc.grpc.bi.BiService.OnceMessageResponse.class, com.rpc.grpc.bi.BiService.OnceMessageResponse.Builder.class);
     }
@@ -815,21 +815,21 @@ public final class BiService {
       return builder;
     }
     /**
-     * Protobuf type {@code OnceMessageResponse}
+     * Protobuf type {@code com.rpc.grpc.bi.OnceMessageResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:OnceMessageResponse)
+        // @@protoc_insertion_point(builder_implements:com.rpc.grpc.bi.OnceMessageResponse)
         com.rpc.grpc.bi.BiService.OnceMessageResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.rpc.grpc.bi.BiService.internal_static_OnceMessageResponse_descriptor;
+        return com.rpc.grpc.bi.BiService.internal_static_com_rpc_grpc_bi_OnceMessageResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.rpc.grpc.bi.BiService.internal_static_OnceMessageResponse_fieldAccessorTable
+        return com.rpc.grpc.bi.BiService.internal_static_com_rpc_grpc_bi_OnceMessageResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.rpc.grpc.bi.BiService.OnceMessageResponse.class, com.rpc.grpc.bi.BiService.OnceMessageResponse.Builder.class);
       }
@@ -855,7 +855,7 @@ public final class BiService {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.rpc.grpc.bi.BiService.internal_static_OnceMessageResponse_descriptor;
+        return com.rpc.grpc.bi.BiService.internal_static_com_rpc_grpc_bi_OnceMessageResponse_descriptor;
       }
 
       @java.lang.Override
@@ -1068,10 +1068,10 @@ public final class BiService {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:OnceMessageResponse)
+      // @@protoc_insertion_point(builder_scope:com.rpc.grpc.bi.OnceMessageResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:OnceMessageResponse)
+    // @@protoc_insertion_point(class_scope:com.rpc.grpc.bi.OnceMessageResponse)
     private static final com.rpc.grpc.bi.BiService.OnceMessageResponse DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.rpc.grpc.bi.BiService.OnceMessageResponse();
@@ -1120,15 +1120,15 @@ public final class BiService {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_OnceMessageRequest_descriptor;
+    internal_static_com_rpc_grpc_bi_OnceMessageRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_OnceMessageRequest_fieldAccessorTable;
+      internal_static_com_rpc_grpc_bi_OnceMessageRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_OnceMessageResponse_descriptor;
+    internal_static_com_rpc_grpc_bi_OnceMessageResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_OnceMessageResponse_fieldAccessorTable;
+      internal_static_com_rpc_grpc_bi_OnceMessageResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1138,30 +1138,32 @@ public final class BiService {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020bi_service.proto\"%\n\022OnceMessageRequest" +
-      "\022\017\n\007content\030\001 \001(\t\"&\n\023OnceMessageResponse" +
-      "\022\017\n\007content\030\001 \001(\t2M\n\014BiRpcService\022=\n\016get" +
-      "OnceMessage\022\023.OnceMessageRequest\032\024.OnceM" +
-      "essageResponse\"\0002S\n\017NewBiRpcService\022@\n\021n" +
-      "ewGetOnceMessage\022\023.OnceMessageRequest\032\024." +
-      "OnceMessageResponse\"\000B\036\n\017com.rpc.grpc.bi" +
-      "B\tBiServiceP\000b\006proto3"
+      "\n\020bi_service.proto\022\017com.rpc.grpc.bi\"%\n\022O" +
+      "nceMessageRequest\022\017\n\007content\030\001 \001(\t\"&\n\023On" +
+      "ceMessageResponse\022\017\n\007content\030\001 \001(\t2m\n\014Bi" +
+      "RpcService\022]\n\016getOnceMessage\022#.com.rpc.g" +
+      "rpc.bi.OnceMessageRequest\032$.com.rpc.grpc" +
+      ".bi.OnceMessageResponse\"\0002s\n\017NewBiRpcSer" +
+      "vice\022`\n\021newGetOnceMessage\022#.com.rpc.grpc" +
+      ".bi.OnceMessageRequest\032$.com.rpc.grpc.bi" +
+      ".OnceMessageResponse\"\000B\036\n\017com.rpc.grpc.b" +
+      "iB\tBiServiceP\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_OnceMessageRequest_descriptor =
+    internal_static_com_rpc_grpc_bi_OnceMessageRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_OnceMessageRequest_fieldAccessorTable = new
+    internal_static_com_rpc_grpc_bi_OnceMessageRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_OnceMessageRequest_descriptor,
+        internal_static_com_rpc_grpc_bi_OnceMessageRequest_descriptor,
         new java.lang.String[] { "Content", });
-    internal_static_OnceMessageResponse_descriptor =
+    internal_static_com_rpc_grpc_bi_OnceMessageResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_OnceMessageResponse_fieldAccessorTable = new
+    internal_static_com_rpc_grpc_bi_OnceMessageResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_OnceMessageResponse_descriptor,
+        internal_static_com_rpc_grpc_bi_OnceMessageResponse_descriptor,
         new java.lang.String[] { "Content", });
   }
 

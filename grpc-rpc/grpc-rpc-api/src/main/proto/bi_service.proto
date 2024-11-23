@@ -3,6 +3,7 @@ syntax = "proto3";
 option java_package = "com.rpc.grpc.bi";
 option java_multiple_files = false;
 option java_outer_classname = "BiService";
+package com.rpc.grpc.bi;
 
 message OnceMessageRequest {
   string content = 1;
