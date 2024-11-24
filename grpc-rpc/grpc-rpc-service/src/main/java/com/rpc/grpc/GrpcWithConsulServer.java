@@ -42,6 +42,7 @@ public class GrpcWithConsulServer {
                         .name("bi-server")
                         .port(port)
                         .address("127.0.0.1")
+                        // 注册到 consul 到时候会触发一个报错，但是可以忽略因为 grpc 尝试响应 check 到时候建立的事 http2 协议但是这个是 tcp 的所以会造成一个异常
                         .check(Registration.RegCheck.tcp("127.0.0.1:" + port, 10))
                         .build()
         );
