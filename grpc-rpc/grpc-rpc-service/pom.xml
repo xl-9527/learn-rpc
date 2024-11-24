@@ -23,5 +23,12 @@
             <artifactId>grpc-rpc-api</artifactId>
             <version>1.0.0</version>
         </dependency>
+
+        <!-- consul -->
+        <dependency>
+            <groupId>com.orbitz.consul</groupId>
+            <artifactId>consul-client</artifactId>
+            <version>1.5.3</version>
+        </dependency>
     </dependencies>
 </project>
