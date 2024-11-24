@@ -6,6 +6,14 @@ spring:
   application:
     name: grpc-server
   main:
-    web-application-type: none
+    web-application-type: servlet
+  cloud:
+    consul:
+      discovery:
+        register: true
+        heartbeat:
+          enabled: true
 server:
   port: 9999
+
+# consul 配置
