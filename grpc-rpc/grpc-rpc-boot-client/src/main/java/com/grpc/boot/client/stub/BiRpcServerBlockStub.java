@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("stub/bi/server")
 public class BiRpcServerBlockStub {
 
-    @GrpcClient("bi_server")
+    @GrpcClient("grpc_server")
     private BiRpcServiceGrpc.BiRpcServiceBlockingStub biRpcServiceBlockingStub;
 
     @GetMapping

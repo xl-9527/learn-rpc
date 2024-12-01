@@ -1,11 +1,22 @@
 spring:
   application:
     name: grpc-rpc-boot-client
+# consul 配置
+  cloud:
+    consul:
+      host: 192.168.4.81
+      discovery:
+        heartbeat:
+          enabled: true
+        register: true
+      port: 8500
+      enabled: true
 grpc:
   client:
-    bi_server:
-      address: static://localhost:8888
+    grpc_server:
+      address: 'discovery://grpc-server'
       negotiation-type: plaintext
+      enable-keep-alive: true
 
 server:
   port: 8989

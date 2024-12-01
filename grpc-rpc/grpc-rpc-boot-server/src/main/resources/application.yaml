@@ -1,3 +1,4 @@
+# grpc 配置
 grpc:
   server:
     port: 8888
@@ -7,13 +8,15 @@ spring:
     name: grpc-server
   main:
     web-application-type: servlet
+# consul 配置
   cloud:
     consul:
       discovery:
         register: true
         heartbeat:
           enabled: true
+      enabled: true
+      host: 192.168.4.81
+      port: 8500
 server:
   port: 9999
-
-# consul 配置
