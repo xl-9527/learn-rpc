@@ -14,7 +14,7 @@ spring:
 grpc:
   client:
     grpc_server:
-      address: 'discovery://grpc-server'
+      address: 'discovery:///grpc-server'
       negotiation-type: plaintext
       enable-keep-alive: true
 
