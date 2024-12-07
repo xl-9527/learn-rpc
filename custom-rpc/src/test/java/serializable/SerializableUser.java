@@ -1,4 +1,4 @@
-package seri;
+package serializable;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

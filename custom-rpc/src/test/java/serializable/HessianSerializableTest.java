@@ -1,4 +1,4 @@
-package seri;
+package serializable;
 
 import com.caucho.hessian.io.Hessian2Input;
 import com.caucho.hessian.io.Hessian2Output;
