@@ -1,4 +1,4 @@
-package serializable;
+package com.rpc.biz.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

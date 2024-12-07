@@ -1,6 +1,7 @@
 package serializable;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.rpc.biz.bean.SerializableUser;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 

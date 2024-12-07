@@ -2,6 +2,7 @@ package serializable;
 
 import com.caucho.hessian.io.Hessian2Input;
 import com.caucho.hessian.io.Hessian2Output;
+import com.rpc.biz.bean.SerializableUser;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 

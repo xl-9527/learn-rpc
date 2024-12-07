@@ -1,5 +1,6 @@
 package serializable;
 
+import com.rpc.biz.bean.SerializableUser;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.thrift.TException;
 import org.apache.thrift.protocol.TBinaryProtocol;
