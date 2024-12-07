@@ -4,7 +4,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.thrift.TException;
 import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.transport.TIOStreamTransport;
-import org.apache.thrift.transport.TTransportException;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
