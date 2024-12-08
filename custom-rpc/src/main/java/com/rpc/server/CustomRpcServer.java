@@ -33,7 +33,6 @@ public class CustomRpcServer {
                         pipeline.addLast(new ChannelInboundHandlerAdapter() {
                             @Override
                             public void channelRead(final ChannelHandlerContext ctx, final Object msg) throws Exception {
-                                log.info("收到客户端的消息");
                                 super.channelRead(ctx, msg);
                             }
                         });

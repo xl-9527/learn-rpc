@@ -3,10 +3,7 @@ package com.rpc.server;
 import com.rpc.custom_grpc.SerializableProto;
 import com.rpc.server.codec.CustomMessageToMessageCodec;
 import io.netty.bootstrap.Bootstrap;
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.ChannelPipeline;
+import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
@@ -50,6 +47,6 @@ public class CustomRpcClient {
                         });
                     }
                 })
-                .connect(new InetSocketAddress("localhost", 8888)).sync();
+                .connect(new InetSocketAddress("localhost", 8888));
     }
 }
