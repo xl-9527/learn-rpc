@@ -25,14 +25,14 @@ public class CustomRpcServer {
                 .handler(new LoggingHandler())
                 .childHandler(new ChannelInitializer<NioSocketChannel>() {
                     @Override
-                    protected void initChannel(final NioSocketChannel nioSocketChannel) throws Exception {
+                    protected void initChannel(final NioSocketChannel nioSocketChannel) {
                         final ChannelPipeline pipeline = nioSocketChannel.pipeline();
                         // 添加不需要偏移量的分帧
                         pipeline.addLast(new LengthFieldBasedFrameDecoder(1024, 0, 4, 0, 0));
                         pipeline.addLast(new CustomMessageToMessageCodec());
                         pipeline.addLast(new SimpleChannelInboundHandler<>() {
                             @Override
-                            protected void channelRead0(final ChannelHandlerContext channelHandlerContext, final Object o) throws Exception {
+                            protected void channelRead0(final ChannelHandlerContext channelHandlerContext, final Object o) {
                                 if (o instanceof SerializableUser serializableUser) {
                                     log.info("serializableUser -> {}", serializableUser.getUsername());
                                 }
