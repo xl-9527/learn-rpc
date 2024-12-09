@@ -1,5 +1,6 @@
 package com.rpc.server;
 
+import com.rpc.biz.bean.SerializableUser;
 import com.rpc.server.codec.CustomMessageToMessageCodec;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
@@ -21,24 +22,25 @@ public class CustomRpcServer {
         final ServerBootstrap serverBootstrap = new ServerBootstrap()
                 .group(new NioEventLoopGroup())
                 .channel(NioServerSocketChannel.class)
+                .handler(new LoggingHandler())
                 .childHandler(new ChannelInitializer<NioSocketChannel>() {
                     @Override
                     protected void initChannel(final NioSocketChannel nioSocketChannel) throws Exception {
                         final ChannelPipeline pipeline = nioSocketChannel.pipeline();
-                        // add logger
-                        pipeline.addLast(new LoggingHandler());
-                        // 添加不需要便宜量的分帧
+                        // 添加不需要偏移量的分帧
                         pipeline.addLast(new LengthFieldBasedFrameDecoder(1024, 0, 4, 0, 0));
                         pipeline.addLast(new CustomMessageToMessageCodec());
-                        pipeline.addLast(new ChannelInboundHandlerAdapter() {
+                        pipeline.addLast(new SimpleChannelInboundHandler<>() {
                             @Override
-                            public void channelRead(final ChannelHandlerContext ctx, final Object msg) throws Exception {
-                                super.channelRead(ctx, msg);
+                            protected void channelRead0(final ChannelHandlerContext channelHandlerContext, final Object o) throws Exception {
+                                if (o instanceof SerializableUser serializableUser) {
+                                    log.info("serializableUser -> {}", serializableUser.getUsername());
+                                }
                             }
                         });
                     }
                 });
 
-        serverBootstrap.bind(8888).sync();
+        serverBootstrap.bind(8888).sync().channel().closeFuture().sync();
     }
 }
