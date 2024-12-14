@@ -9,6 +9,7 @@ import org.apache.curator.framework.recipes.cache.*;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.apache.zookeeper.CreateMode;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Function;
@@ -120,6 +121,40 @@ public class ZkCuratorFrameworkServerOps implements ZkOps {
             curatorFramework.delete().deletingChildrenIfNeeded().forPath(path);
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public void watchNode(String path, PathChildrenCacheListener pathChildrenCacheListener) {
+        try (final CuratorCache curatorCache = CuratorCache.builder(curatorFramework, path).build()) {
+            curatorCache.listenable().addListener(
+                    CuratorCacheListener.builder()
+                            .forPathChildrenCache(path, curatorFramework, pathChildrenCacheListener)
+                            .build()
+            );
+            curatorCache.start();
+            final int read = System.in.read();
+            log.info("read path child listener is {}", read);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void watchNode(String path, CuratorCacheListenerBuilder.ChangeListener changeListener) {
+        try (final CuratorCache curatorCache = CuratorCache.builder(curatorFramework, path).build()) {
+            curatorCache.listenable().addListener(
+                    CuratorCacheListener.builder()
+                            .forChanges(changeListener)
+                            .build()
+            );
+            curatorCache.start();
+        } finally {
+            final int read;
+            try {
+                read = System.in.read();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            log.info("read is {}", read);
         }
     }
 
