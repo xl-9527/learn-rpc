@@ -1,4 +1,4 @@
-package com.rpc.serializable;
+package com.rpc.pre.serializable;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

@@ -1,4 +1,4 @@
-package com.rpc.serializable;
+package com.rpc.pre.serializable;
 
 import com.caucho.hessian.io.Hessian2Input;
 import com.caucho.hessian.io.Hessian2Output;

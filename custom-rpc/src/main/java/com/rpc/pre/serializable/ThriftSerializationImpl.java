@@ -1,4 +1,4 @@
-package com.rpc.serializable;
+package com.rpc.pre.serializable;
 
 import org.apache.thrift.TSerializable;
 import org.apache.thrift.protocol.TBinaryProtocol;

@@ -2,7 +2,7 @@
 // source: serializable_proto.proto
 
 // Protobuf Java Version: 3.25.5
-package com.rpc.custom_grpc;
+package com.rpc.pre.custom_grpc;
 
 public final class SerializableProto {
   private SerializableProto() {}
@@ -56,15 +56,15 @@ public final class SerializableProto {
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.rpc.custom_grpc.SerializableProto.internal_static_com_rpc_custom_grpc_SerializableUser_descriptor;
+      return SerializableProto.internal_static_com_rpc_custom_grpc_SerializableUser_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.rpc.custom_grpc.SerializableProto.internal_static_com_rpc_custom_grpc_SerializableUser_fieldAccessorTable
+      return SerializableProto.internal_static_com_rpc_custom_grpc_SerializableUser_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.rpc.custom_grpc.SerializableProto.SerializableUser.class, com.rpc.custom_grpc.SerializableProto.SerializableUser.Builder.class);
+              SerializableProto.SerializableUser.class, SerializableProto.SerializableUser.Builder.class);
     }
 
     public static final int USERNAME_FIELD_NUMBER = 1;
@@ -145,10 +145,10 @@ public final class SerializableProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.rpc.custom_grpc.SerializableProto.SerializableUser)) {
+      if (!(obj instanceof SerializableProto.SerializableUser)) {
         return super.equals(obj);
       }
-      com.rpc.custom_grpc.SerializableProto.SerializableUser other = (com.rpc.custom_grpc.SerializableProto.SerializableUser) obj;
+      SerializableProto.SerializableUser other = (SerializableProto.SerializableUser) obj;
 
       if (!getUsername()
           .equals(other.getUsername())) return false;
@@ -170,44 +170,44 @@ public final class SerializableProto {
       return hash;
     }
 
-    public static com.rpc.custom_grpc.SerializableProto.SerializableUser parseFrom(
+    public static SerializableProto.SerializableUser parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.rpc.custom_grpc.SerializableProto.SerializableUser parseFrom(
+    public static SerializableProto.SerializableUser parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.rpc.custom_grpc.SerializableProto.SerializableUser parseFrom(
+    public static SerializableProto.SerializableUser parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.rpc.custom_grpc.SerializableProto.SerializableUser parseFrom(
+    public static SerializableProto.SerializableUser parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.rpc.custom_grpc.SerializableProto.SerializableUser parseFrom(byte[] data)
+    public static SerializableProto.SerializableUser parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.rpc.custom_grpc.SerializableProto.SerializableUser parseFrom(
+    public static SerializableProto.SerializableUser parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.rpc.custom_grpc.SerializableProto.SerializableUser parseFrom(java.io.InputStream input)
+    public static SerializableProto.SerializableUser parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.rpc.custom_grpc.SerializableProto.SerializableUser parseFrom(
+    public static SerializableProto.SerializableUser parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -215,26 +215,26 @@ public final class SerializableProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static com.rpc.custom_grpc.SerializableProto.SerializableUser parseDelimitedFrom(java.io.InputStream input)
+    public static SerializableProto.SerializableUser parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static com.rpc.custom_grpc.SerializableProto.SerializableUser parseDelimitedFrom(
+    public static SerializableProto.SerializableUser parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.rpc.custom_grpc.SerializableProto.SerializableUser parseFrom(
+    public static SerializableProto.SerializableUser parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.rpc.custom_grpc.SerializableProto.SerializableUser parseFrom(
+    public static SerializableProto.SerializableUser parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -247,7 +247,7 @@ public final class SerializableProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.rpc.custom_grpc.SerializableProto.SerializableUser prototype) {
+    public static Builder newBuilder(SerializableProto.SerializableUser prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -268,18 +268,18 @@ public final class SerializableProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:com.rpc.custom_grpc.SerializableUser)
-        com.rpc.custom_grpc.SerializableProto.SerializableUserOrBuilder {
+        SerializableProto.SerializableUserOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.rpc.custom_grpc.SerializableProto.internal_static_com_rpc_custom_grpc_SerializableUser_descriptor;
+        return SerializableProto.internal_static_com_rpc_custom_grpc_SerializableUser_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.rpc.custom_grpc.SerializableProto.internal_static_com_rpc_custom_grpc_SerializableUser_fieldAccessorTable
+        return SerializableProto.internal_static_com_rpc_custom_grpc_SerializableUser_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.rpc.custom_grpc.SerializableProto.SerializableUser.class, com.rpc.custom_grpc.SerializableProto.SerializableUser.Builder.class);
+                SerializableProto.SerializableUser.class, SerializableProto.SerializableUser.Builder.class);
       }
 
       // Construct using com.rpc.custom_grpc.SerializableProto.SerializableUser.newBuilder()
@@ -303,17 +303,17 @@ public final class SerializableProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.rpc.custom_grpc.SerializableProto.internal_static_com_rpc_custom_grpc_SerializableUser_descriptor;
+        return SerializableProto.internal_static_com_rpc_custom_grpc_SerializableUser_descriptor;
       }
 
       @java.lang.Override
-      public com.rpc.custom_grpc.SerializableProto.SerializableUser getDefaultInstanceForType() {
-        return com.rpc.custom_grpc.SerializableProto.SerializableUser.getDefaultInstance();
+      public SerializableProto.SerializableUser getDefaultInstanceForType() {
+        return SerializableProto.SerializableUser.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.rpc.custom_grpc.SerializableProto.SerializableUser build() {
-        com.rpc.custom_grpc.SerializableProto.SerializableUser result = buildPartial();
+      public SerializableProto.SerializableUser build() {
+        SerializableProto.SerializableUser result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -321,14 +321,14 @@ public final class SerializableProto {
       }
 
       @java.lang.Override
-      public com.rpc.custom_grpc.SerializableProto.SerializableUser buildPartial() {
-        com.rpc.custom_grpc.SerializableProto.SerializableUser result = new com.rpc.custom_grpc.SerializableProto.SerializableUser(this);
+      public SerializableProto.SerializableUser buildPartial() {
+        SerializableProto.SerializableUser result = new SerializableProto.SerializableUser(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(com.rpc.custom_grpc.SerializableProto.SerializableUser result) {
+      private void buildPartial0(SerializableProto.SerializableUser result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.username_ = username_;
@@ -369,16 +369,16 @@ public final class SerializableProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.rpc.custom_grpc.SerializableProto.SerializableUser) {
-          return mergeFrom((com.rpc.custom_grpc.SerializableProto.SerializableUser)other);
+        if (other instanceof SerializableProto.SerializableUser) {
+          return mergeFrom((SerializableProto.SerializableUser)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.rpc.custom_grpc.SerializableProto.SerializableUser other) {
-        if (other == com.rpc.custom_grpc.SerializableProto.SerializableUser.getDefaultInstance()) return this;
+      public Builder mergeFrom(SerializableProto.SerializableUser other) {
+        if (other == SerializableProto.SerializableUser.getDefaultInstance()) return this;
         if (!other.getUsername().isEmpty()) {
           username_ = other.username_;
           bitField0_ |= 0x00000001;
@@ -520,12 +520,12 @@ public final class SerializableProto {
     }
 
     // @@protoc_insertion_point(class_scope:com.rpc.custom_grpc.SerializableUser)
-    private static final com.rpc.custom_grpc.SerializableProto.SerializableUser DEFAULT_INSTANCE;
+    private static final SerializableProto.SerializableUser DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.rpc.custom_grpc.SerializableProto.SerializableUser();
+      DEFAULT_INSTANCE = new SerializableProto.SerializableUser();
     }
 
-    public static com.rpc.custom_grpc.SerializableProto.SerializableUser getDefaultInstance() {
+    public static SerializableProto.SerializableUser getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -561,7 +561,7 @@ public final class SerializableProto {
     }
 
     @java.lang.Override
-    public com.rpc.custom_grpc.SerializableProto.SerializableUser getDefaultInstanceForType() {
+    public SerializableProto.SerializableUser getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 

@@ -1,7 +1,7 @@
-package com.rpc.server;
+package com.rpc.pre.server;
 
-import com.rpc.biz.bean.SerializableUser;
-import com.rpc.server.codec.CustomMessageToMessageCodec;
+import com.rpc.pre.bean.SerializableUser;
+import com.rpc.pre.server.codec.CustomMessageToMessageCodec;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;

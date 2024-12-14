@@ -1,7 +1,7 @@
 package serializable;
 
 import com.google.protobuf.InvalidProtocolBufferException;
-import com.rpc.custom_grpc.SerializableProto;
+import com.rpc.pre.custom_grpc.SerializableProto;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 

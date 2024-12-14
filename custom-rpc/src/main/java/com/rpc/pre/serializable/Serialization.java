@@ -1,4 +1,4 @@
-package com.rpc.serializable;
+package com.rpc.pre.serializable;
 
 /**
  * 方法设计五要素

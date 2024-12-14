@@ -1,6 +1,8 @@
 package com.rpc.serializable;
 
-import com.rpc.biz.bean.SerializableUser;
+import com.rpc.pre.bean.SerializableUser;
+import com.rpc.pre.serializable.JdkSerializationImpl;
+import com.rpc.pre.serializable.Serialization;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

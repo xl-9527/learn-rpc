@@ -4,7 +4,7 @@
  * DO NOT EDIT UNLESS YOU ARE SURE THAT YOU KNOW WHAT YOU ARE DOING
  *  @generated
  */
-package com.rpc.custom_rpc.thrift;
+package com.rpc.pre.thrift;
 
 import javax.annotation.processing.Generated;
 

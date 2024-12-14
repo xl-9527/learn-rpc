@@ -1,6 +1,6 @@
 package serializable;
 
-import com.rpc.biz.bean.SerializableUser;
+import com.rpc.pre.bean.SerializableUser;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.thrift.TException;
 import org.apache.thrift.protocol.TBinaryProtocol;
@@ -20,8 +20,8 @@ public class ThriftSerializableTest {
     @Test
     public void doTestThriftSerializable() throws TException {
         final SerializableUser serializableUser = new SerializableUser("xl-9527");
-        final com.rpc.custom_rpc.thrift.SerializableUser user =
-                new com.rpc.custom_rpc.thrift.SerializableUser(serializableUser.getUsername());
+        final com.rpc.pre.thrift.SerializableUser user =
+                new com.rpc.pre.thrift.SerializableUser(serializableUser.getUsername());
 
         final ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         final TBinaryProtocol tBinaryProtocol = new TBinaryProtocol(new TIOStreamTransport(byteArrayOutputStream));
@@ -32,7 +32,7 @@ public class ThriftSerializableTest {
         /* 反序列化 */
         final TBinaryProtocol inProtocol =
                 new TBinaryProtocol(new TIOStreamTransport(new ByteArrayInputStream(byteArrayOutputStream.toByteArray())));
-        final com.rpc.custom_rpc.thrift.SerializableUser newUser = new com.rpc.custom_rpc.thrift.SerializableUser();
+        final com.rpc.pre.thrift.SerializableUser newUser = new com.rpc.pre.thrift.SerializableUser();
         newUser.read(inProtocol);
 
         log.info("反序列化后：{}", newUser.getUsername());

@@ -1,4 +1,4 @@
-package com.rpc.serializable;
+package com.rpc.pre.serializable;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;

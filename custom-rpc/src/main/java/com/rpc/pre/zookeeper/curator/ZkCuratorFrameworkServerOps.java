@@ -1,6 +1,6 @@
-package com.rpc.zookeeper.curator;
+package com.rpc.pre.zookeeper.curator;
 
-import com.rpc.zookeeper.ZkOps;
+import com.rpc.pre.zookeeper.ZkOps;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;

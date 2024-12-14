@@ -1,6 +1,6 @@
-package com.rpc.server.codec;
+package com.rpc.pre.server.codec;
 
-import com.rpc.biz.bean.SerializableUser;
+import com.rpc.pre.bean.SerializableUser;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageEncoder;
 

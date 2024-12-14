@@ -1,8 +1,8 @@
-package com.rpc.biz.bean;
+package com.rpc.pre.bean;
 
 import com.google.protobuf.InvalidProtocolBufferException;
-import com.rpc.custom_grpc.SerializableProto;
-import com.rpc.serializable.AbsGrpcSerialization;
+import com.rpc.pre.custom_grpc.SerializableProto;
+import com.rpc.pre.serializable.AbsGrpcSerialization;
 import lombok.*;
 
 import java.io.Serializable;

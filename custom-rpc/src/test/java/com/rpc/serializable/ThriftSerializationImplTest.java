@@ -1,6 +1,7 @@
 package com.rpc.serializable;
 
-import com.rpc.custom_rpc.thrift.SerializableUser;
+import com.rpc.pre.serializable.ThriftSerializationImpl;
+import com.rpc.pre.thrift.SerializableUser;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

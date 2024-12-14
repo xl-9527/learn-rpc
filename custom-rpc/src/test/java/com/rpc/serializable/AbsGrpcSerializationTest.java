@@ -1,6 +1,6 @@
 package com.rpc.serializable;
 
-import com.rpc.biz.bean.SerializableUser;
+import com.rpc.pre.bean.SerializableUser;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
