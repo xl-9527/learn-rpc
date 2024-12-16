@@ -8,8 +8,8 @@ import java.io.Serializable;
  **/
 public interface Protocol extends Serializable {
 
-    /* 魔术 */
+    /* 魔术 9b */
     String MAGIC_NUMBER = "CUSTOM_RPC";
-    /* 协议版本 */
+    /* 协议版本 1b */
     byte PROTOCOL_VERSION = 1;
 }
