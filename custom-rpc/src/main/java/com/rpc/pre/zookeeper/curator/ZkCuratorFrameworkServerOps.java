@@ -68,7 +68,8 @@ public class ZkCuratorFrameworkServerOps implements ZkOps {
 
     protected CuratorFramework initFrameWork() {
         // retry setting
-        final ExponentialBackoffRetry backoffRetry = new ExponentialBackoffRetry(1000, 3, 3);
+        final ExponentialBackoffRetry backoffRetry = new
+                ExponentialBackoffRetry(1000, 3, 3000);
         // init client
         return CuratorFrameworkFactory.builder()
                 .connectString("101.35.52.157:2181")
