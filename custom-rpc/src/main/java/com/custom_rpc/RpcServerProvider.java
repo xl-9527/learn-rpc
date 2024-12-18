@@ -86,14 +86,15 @@ public class RpcServerProvider {
                     }
                 });
 
+        // 非正常退出做出合理的关闭操作
+        Runtime.getRuntime().addShutdownHook(new Thread(this::stop));
+
         // 监听关闭
         channel.channel().closeFuture().addListener(future -> {
             if (future.isSuccess()) {
                 stop();
             }
         }).sync();
-        // 非正常退出做出合理的关闭操作
-        Runtime.getRuntime().addShutdownHook(new Thread(this::stop));
     }
 
     private void registryServer() throws UnknownHostException {

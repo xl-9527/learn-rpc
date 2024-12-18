@@ -1,5 +1,6 @@
 package com.custom_rpc.registry;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.ExponentialBackoffRetry;
@@ -7,11 +8,13 @@ import org.apache.zookeeper.CreateMode;
 
 import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author xl-9527
  * @since 2024/12/17
  **/
+@Slf4j
 public class ZookeeperRegistryImpl implements Registry {
 
     private final CuratorFramework curatorFramework;
@@ -25,8 +28,14 @@ public class ZookeeperRegistryImpl implements Registry {
     public void registry(final String applicationName, final String host, final int port) {
         try {
             final String path = SERVER_PREFIX + "/" + applicationName + SERVER_SUFFIX;
-            curatorFramework.create().creatingParentsIfNeeded()
-                    .forPath(path);
+            if (Objects.isNull(curatorFramework.checkExists().forPath(path))) {
+                curatorFramework.create().creatingParentsIfNeeded()
+                        .forPath(path);
+            } else {
+                if (log.isDebugEnabled()) {
+                    log.debug("节点已经存在 -> {}", path);
+                }
+            }
             curatorFramework.create().withMode(CreateMode.EPHEMERAL)
                     .forPath(path + "/" + host + ":" + port, (host + ":" + port).getBytes(StandardCharsets.UTF_8));
         } catch (Exception e) {
