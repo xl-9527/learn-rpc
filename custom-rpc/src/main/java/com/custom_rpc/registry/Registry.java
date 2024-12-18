@@ -11,8 +11,8 @@ import java.util.List;
  **/
 public interface Registry {
 
-    String SERVER_PREFIX = "RPC";
-    String SERVER_SUFFIX = "PROVIDER";
+    String SERVER_PREFIX = "/RPC";
+    String SERVER_SUFFIX = "/PROVIDER";
 
     void registry(String applicationName, String host, int port);
 
