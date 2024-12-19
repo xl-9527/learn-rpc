@@ -32,7 +32,7 @@ public class CustomRpcClientChannelInitializer extends ChannelInitializer<NioSoc
     protected void initChannel(final NioSocketChannel ch) throws Exception {
         final ChannelPipeline pipeline = ch.pipeline();
         pipeline.addLast(new LoggingHandler());
-        pipeline.addLast(new LengthFieldBasedFrameDecoder(1024, 10, 4, 0, 0));
+        pipeline.addLast(new LengthFieldBasedFrameDecoder(1024, 11, 4, 0, 0));
         pipeline.addLast(new CustomRpcMessageToMessageCodec());
         pipeline.addLast(new ChannelInboundHandlerAdapter() {
 
@@ -42,7 +42,8 @@ public class CustomRpcClientChannelInitializer extends ChannelInitializer<NioSoc
             @Override
             public void channelActive(final ChannelHandlerContext ctx) throws Exception {
                 log.info("请求服务的方法 -> {}", methodInvokeData.getMethod());
-                ctx.writeAndFlush(methodInvokeData).addListener(ChannelFutureListener.CLOSE_ON_FAILURE);
+                final ChannelFuture channelFuture = ctx.writeAndFlush(methodInvokeData);
+                channelFuture.addListener(ChannelFutureListener.CLOSE_ON_FAILURE);
             }
 
             /**
@@ -51,9 +52,9 @@ public class CustomRpcClientChannelInitializer extends ChannelInitializer<NioSoc
             @Override
             public void channelRead(final ChannelHandlerContext ctx, final Object msg) throws Exception {
                 // 响应数据到客户端 server -> client
-                if (msg instanceof Result result) {
-                    log.info("收到服务端到消息 -> {}", result.getResultValue());
-                    setResult(result);
+                if (msg instanceof Result rgs) {
+                    log.info("收到服务端到消息 -> {}", rgs.getResultValue());
+                    setResult(rgs);
                 }
             }
         });

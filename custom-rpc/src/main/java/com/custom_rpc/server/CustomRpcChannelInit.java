@@ -39,19 +39,19 @@ public class CustomRpcChannelInit extends ChannelInitializer<NioSocketChannel> {
         pipeline.addLast(
                 handler,
                 new LengthFieldBasedFrameDecoder(
-                        16777230, 10, 4, 0, 0
+                        1024, 11, 4, 0, 0
                 )
         );
         // codec
         pipeline.addLast(handler, new CustomRpcMessageToMessageCodec());
         // custom rpc handler
-        pipeline.addLast(new SimpleChannelInboundHandler<Protocol>() {
+        pipeline.addLast(bizServer, new ChannelInboundHandlerAdapter() {
+
             @Override
-            protected void channelRead0(final ChannelHandlerContext ctx, final Protocol msg) throws Exception {
+            public void channelRead(final ChannelHandlerContext ctx, final Object msg) throws Exception {
                 log.info("收到信息 -> {}", msg);
                 if (msg instanceof MethodInvokeData methodInvokeData) {
                     Protocol protocol = this.execute(methodInvokeData);
-                    ctx.writeAndFlush(protocol).addListener(ChannelFutureListener.CLOSE);
                     ctx.writeAndFlush(protocol).addListener(ChannelFutureListener.CLOSE_ON_FAILURE);
                 }
             }

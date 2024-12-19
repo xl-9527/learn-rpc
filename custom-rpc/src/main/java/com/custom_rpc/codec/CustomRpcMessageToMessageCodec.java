@@ -24,7 +24,7 @@ public class CustomRpcMessageToMessageCodec extends MessageToMessageCodec<ByteBu
         // 序列化
         final byte[] bytes = serialization.serialization(protocol);
         final ByteBuf buffer = channelHandlerContext.alloc().buffer();
-        // 幻术 9b
+        // 幻术 10b
         buffer.writeBytes(Protocol.MAGIC_NUMBER.getBytes(StandardCharsets.UTF_8));
         // 协议版本 1b
         buffer.writeByte(Protocol.PROTOCOL_VERSION);
@@ -38,7 +38,7 @@ public class CustomRpcMessageToMessageCodec extends MessageToMessageCodec<ByteBu
     @Override
     protected void decode(final ChannelHandlerContext channelHandlerContext, final ByteBuf byteBuf, final List<Object> list) throws Exception {
         // 幻术
-        final CharSequence magicNumber = byteBuf.readCharSequence(9, StandardCharsets.UTF_8);
+        final CharSequence magicNumber = byteBuf.readCharSequence(10, StandardCharsets.UTF_8);
         if (!Objects.equals(magicNumber, Protocol.MAGIC_NUMBER)) {
             throw new RuntimeException("协议错误 - magic");
         }
