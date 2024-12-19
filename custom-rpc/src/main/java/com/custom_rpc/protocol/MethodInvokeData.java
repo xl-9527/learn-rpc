@@ -1,6 +1,8 @@
 package com.custom_rpc.protocol;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * 这个主要是处理请求的数据的包装
@@ -12,8 +14,17 @@ import lombok.Data;
  * @author xl-9527
  * @since 2024/12/15
  **/
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 public class MethodInvokeData implements Protocol {
+
+    public MethodInvokeData(final String interfaceName, final String method, final Class<?>[] parameterTypes, final Object[] args) {
+        this.interfaceName = interfaceName;
+        this.method = method;
+        this.parameterTypes = parameterTypes;
+        this.args = args;
+    }
 
     /**
      * 目标接口

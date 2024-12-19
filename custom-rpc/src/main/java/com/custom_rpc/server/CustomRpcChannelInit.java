@@ -39,7 +39,7 @@ public class CustomRpcChannelInit extends ChannelInitializer<NioSocketChannel> {
         pipeline.addLast(
                 handler,
                 new LengthFieldBasedFrameDecoder(
-                        1024, 10, 4, 0, 0
+                        16777230, 10, 4, 0, 0
                 )
         );
         // codec
@@ -66,7 +66,12 @@ public class CustomRpcChannelInit extends ChannelInitializer<NioSocketChannel> {
                 }
 
                 // 反射调用
-                return null;
+                return new Result();
+            }
+
+            @Override
+            public void exceptionCaught(final ChannelHandlerContext ctx, final Throwable cause) throws Exception {
+                log.error("服务端异常", cause);
             }
         });
     }
