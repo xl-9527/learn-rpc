@@ -100,10 +100,19 @@ public class RpcServerProvider {
     private void registryServer() throws UnknownHostException {
         // 服务注册
         registry.registry("userService", InetAddress.getLocalHost().getHostAddress(), port);
-        log.info("服务启动成功");
+        log.debug("服务启动成功");
     }
 
     public void stop() {
-        log.info("服务停止中");
+        log.debug("服务停止中");
+        try {
+            boos.shutdownGracefully();
+            work.shutdownGracefully();
+            handler.shutdownGracefully();
+            bizService.shutdownGracefully();
+            log.debug("服务停止成功");
+        } catch (Exception e) {
+            log.error("服务停止失败", e);
+        }
     }
 }

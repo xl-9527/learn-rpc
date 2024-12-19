@@ -3,6 +3,10 @@ package com.custom_rpc.registry;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
+import org.apache.curator.framework.recipes.cache.CuratorCache;
+import org.apache.curator.framework.recipes.cache.CuratorCacheListener;
+import org.apache.curator.framework.recipes.cache.PathChildrenCacheEvent;
+import org.apache.curator.framework.recipes.cache.PathChildrenCacheListener;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.apache.zookeeper.CreateMode;
 
@@ -45,12 +49,34 @@ public class ZookeeperRegistryImpl implements Registry {
 
     @Override
     public List<String> getServerList(final String applicationName) {
-        return List.of();
+        String path = SERVER_PREFIX + "/" + applicationName + SERVER_SUFFIX;
+        try {
+            if (Objects.isNull(curatorFramework.checkExists().forPath(path))) {
+                log.warn("服务列表为空 -> {}", applicationName);
+                throw new RuntimeException("服务列表为空");
+            }
+
+            return curatorFramework.getChildren().forPath(path);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
     public void discovery(final String applicationName, final List<String> serverList) {
-
+        String path = SERVER_PREFIX + "/" + applicationName + SERVER_SUFFIX;
+        try (CuratorCache curatorCache = CuratorCache.builder(curatorFramework, path).build()) {
+            curatorCache.listenable().addListener(
+                    CuratorCacheListener.builder()
+                            .forPathChildrenCache(path, curatorFramework, (curatorFramework, pathChildrenCacheEvent) -> {
+                                log.info("监听到节点变化 -> {}", pathChildrenCacheEvent.getData());
+                                serverList.clear();
+                                serverList.addAll(this.getServerList(applicationName));
+                            })
+                            .build()
+            );
+            curatorCache.start();
+        }
     }
 
 
