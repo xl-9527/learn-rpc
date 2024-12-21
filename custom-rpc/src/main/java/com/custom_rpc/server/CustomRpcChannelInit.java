@@ -31,7 +31,7 @@ public class CustomRpcChannelInit extends ChannelInitializer<NioSocketChannel> {
     }
 
     @Override
-    protected void initChannel(final NioSocketChannel nioSocketChannel) throws Exception {
+    protected void initChannel(final NioSocketChannel nioSocketChannel) {
         final ChannelPipeline pipeline = nioSocketChannel.pipeline();
         // logging
         pipeline.addLast(handler, new LoggingHandler());

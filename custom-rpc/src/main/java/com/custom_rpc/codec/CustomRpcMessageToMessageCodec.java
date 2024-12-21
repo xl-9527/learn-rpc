@@ -50,7 +50,9 @@ public class CustomRpcMessageToMessageCodec extends MessageToMessageCodec<ByteBu
         // 数据长度
         final int length = byteBuf.readInt();
         // 数据
-        final Protocol deserialization = serialization.deserialization(byteBuf.readBytes(length).array());
+        byte[] bytes = new byte[length];
+        byteBuf.readBytes(bytes);
+        final Protocol deserialization = serialization.deserialization(bytes);
         list.add(deserialization);
     }
 }

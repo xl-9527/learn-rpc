@@ -1,5 +1,6 @@
 package com.custom_rpc.registry;
 
+import com.custom_rpc.config.RpcConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
@@ -87,7 +88,7 @@ public class ZookeeperRegistryImpl implements Registry {
      */
     private CuratorFramework initCuratorFramework() {
         return CuratorFrameworkFactory.builder()
-                .connectString("127.0.0.1:2181")
+                .connectString(RpcConfig.ZkConfig.INSTANCE.getZkHost() + ":2181")
                 .connectionTimeoutMs(3000)
                 .sessionTimeoutMs(3000)
                 .retryPolicy(new ExponentialBackoffRetry(1000, 3, 3000))
