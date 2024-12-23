@@ -32,7 +32,7 @@ public class CustomRpcClientChannelInitializer extends ChannelInitializer<NioSoc
     protected void initChannel(final NioSocketChannel ch) throws Exception {
         final ChannelPipeline pipeline = ch.pipeline();
         pipeline.addLast(new LoggingHandler());
-        pipeline.addLast(new LengthFieldBasedFrameDecoder(1024, 11, 4, 0, 0));
+        pipeline.addLast(new LengthFieldBasedFrameDecoder(1024 * 10, 11, 4, 0, 0));
         pipeline.addLast(new CustomRpcMessageToMessageCodec());
         pipeline.addLast(new ChannelInboundHandlerAdapter() {
 

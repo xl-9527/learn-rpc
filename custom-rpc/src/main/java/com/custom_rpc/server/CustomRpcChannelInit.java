@@ -39,7 +39,7 @@ public class CustomRpcChannelInit extends ChannelInitializer<NioSocketChannel> {
         pipeline.addLast(
                 handler,
                 new LengthFieldBasedFrameDecoder(
-                        1024, 11, 4, 0, 0
+                        1024 * 10, 11, 4, 0, 0
                 )
         );
         // codec
