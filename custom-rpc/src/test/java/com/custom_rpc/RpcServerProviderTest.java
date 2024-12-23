@@ -1,8 +1,9 @@
 package com.custom_rpc;
 
+import com.custom_rpc.service.HelloService;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.Map;
 
 /**
  * @author xl-9527
@@ -10,7 +11,9 @@ import static org.junit.jupiter.api.Assertions.*;
  **/
 class RpcServerProviderTest {
 
-    final RpcServerProvider rpcServerProvider = new RpcServerProvider();
+    final RpcServerProvider rpcServerProvider = new RpcServerProvider(
+            Map.of(HelloService.class.getName(), new HelloService())
+    );
 
     @Test
     void start() throws InterruptedException {

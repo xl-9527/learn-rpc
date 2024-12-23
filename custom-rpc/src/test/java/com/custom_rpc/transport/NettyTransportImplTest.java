@@ -1,6 +1,7 @@
 package com.custom_rpc.transport;
 
 import com.custom_rpc.protocol.MethodInvokeData;
+import com.custom_rpc.service.HelloService;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -16,8 +17,8 @@ class NettyTransportImplTest {
     @Test
     void invoke() throws InterruptedException {
         final MethodInvokeData invokeData = new MethodInvokeData(
-                "com.custom_rpc.service.HelloService",
-                "hello custom Rpc",
+                HelloService.class.getName(),
+                "hello",
                 new Class[]{String.class},
                 new Object[]{"xl-9527"}
         );

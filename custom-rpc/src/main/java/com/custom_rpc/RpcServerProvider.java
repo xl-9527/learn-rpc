@@ -49,8 +49,8 @@ public class RpcServerProvider {
     /**
      * 默认提供 8888 端口，并且提供空的 exposBeans 的配置，而且默认注册中心为 zookeeper
      */
-    public RpcServerProvider() {
-        this(8888, 1, 1, 1, new ZookeeperRegistryImpl(), new HashMap<>());
+    public RpcServerProvider(Map<String, Object> exposeBeans) {
+        this(8888, 1, 1, 1, new ZookeeperRegistryImpl(), exposeBeans);
     }
 
     public RpcServerProvider(
@@ -99,7 +99,9 @@ public class RpcServerProvider {
 
     private void registryServer() throws UnknownHostException {
         // 服务注册
-        registry.registry("userService", InetAddress.getLocalHost().getHostAddress(), port);
+        for (final String serverName : exposeBeans.keySet()) {
+            registry.registry(serverName, InetAddress.getLocalHost().getHostAddress(), port);
+        }
         log.debug("服务启动成功");
     }
 

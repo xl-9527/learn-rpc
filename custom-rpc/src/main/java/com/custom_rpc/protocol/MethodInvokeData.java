@@ -4,6 +4,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.lang.reflect.Method;
+import java.util.Objects;
+
 /**
  * 这个主要是处理请求的数据的包装
  * 1. 目标的接口
@@ -24,6 +27,20 @@ public class MethodInvokeData implements Protocol {
         this.method = method;
         this.parameterTypes = parameterTypes;
         this.args = args;
+    }
+
+    public MethodInvokeData(final Class<?> clazz, final String method, Object[] args) {
+        for (final Method declaredMethod : clazz.getDeclaredMethods()) {
+            if (declaredMethod.getName().equals(method)) {
+                this.interfaceName = clazz.getName();
+                this.method = method;
+                this.parameterTypes = declaredMethod.getParameterTypes();
+                this.args = args;
+                return;
+            }
+        }
+
+        throw new RuntimeException("method not found");
     }
 
     /**

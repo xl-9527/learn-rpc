@@ -10,6 +10,7 @@ import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 import io.netty.handler.logging.LoggingHandler;
 import lombok.extern.slf4j.Slf4j;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 import java.util.Objects;
 
@@ -59,14 +60,21 @@ public class CustomRpcChannelInit extends ChannelInitializer<NioSocketChannel> {
             private Protocol execute(final MethodInvokeData methodInvokeData) {
                 final String interfaceName = methodInvokeData.getInterfaceName();
                 final Object object = exposeBean.get(interfaceName);
+                final Result result = new Result();
                 if (Objects.isNull(object)) {
-                    final Result result = new Result();
                     result.setException(new RuntimeException("调用对象不存在 -> " + interfaceName));
                     return result;
                 }
 
                 // 反射调用
-                return new Result();
+                try {
+                    final Object invoke = object.getClass().getDeclaredMethod(methodInvokeData.getMethod(), methodInvokeData.getParameterTypes())
+                            .invoke(object, methodInvokeData.getArgs());
+                    result.setResultValue(invoke);
+                } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+                    throw new RuntimeException(e);
+                }
+                return result;
             }
 
             @Override
