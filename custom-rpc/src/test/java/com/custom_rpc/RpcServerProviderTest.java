@@ -1,6 +1,7 @@
 package com.custom_rpc;
 
 import com.custom_rpc.service.HelloService;
+import com.custom_rpc.service.HelloServiceImpl;
 import org.junit.jupiter.api.Test;
 
 import java.util.Map;
@@ -12,7 +13,7 @@ import java.util.Map;
 class RpcServerProviderTest {
 
     final RpcServerProvider rpcServerProvider = new RpcServerProvider(
-            Map.of(HelloService.class.getName(), new HelloService())
+            Map.of(HelloService.class.getName(), new HelloServiceImpl())
     );
 
     @Test
