@@ -16,6 +16,7 @@ public class Stub implements InvocationHandler {
 
     private static final RpcClientProvider RPC_CLIENT_PROVIDER = new RpcClientProvider();
 
+    @SuppressWarnings("unchecked")
     public <T> T create(Class<T> clazz) {
         if (!clazz.isInterface()) {
             throw new RuntimeException(clazz.getName() + "不是接口");
