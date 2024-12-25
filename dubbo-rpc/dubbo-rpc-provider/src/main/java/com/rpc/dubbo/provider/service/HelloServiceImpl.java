@@ -12,8 +12,8 @@ import lombok.extern.slf4j.Slf4j;
 public class HelloServiceImpl implements HelloService {
 
     @Override
-    public boolean hello(final Hello hello) {
+    public Boolean hello(final Hello hello) {
         log.info("hello 接口调用 -> {}", hello);
-        return false;
+        return Boolean.TRUE;
     }
 }

@@ -8,5 +8,5 @@ import com.rpc.dubbo.entity.Hello;
  **/
 public interface HelloService {
 
-    boolean hello(Hello hello);
+    Boolean hello(Hello hello);
 }

@@ -6,9 +6,9 @@ import org.junit.jupiter.api.Test;
  * @author xl-9527
  * @since 2024/12/24
  **/
-class ApplicationStartTest {
+class ProviderStartTest {
 
-    private final ApplicationStart applicationStart = new ApplicationStart();
+    private final ProviderStart applicationStart = new ProviderStart();
 
     @Test
     void start() throws InterruptedException {
