@@ -14,7 +14,6 @@ public class ConsumerStart {
 
     public void start() {
         final ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("application-context.xml");
-        ctx.start();
         Boolean hello = ctx.getBean("helloService", HelloService.class).hello(new Hello("你好", "dubbo-consumer"));
         log.info("调用结果 -> {}", hello);
     }
