@@ -1,1 +1,9 @@
-spring.application.name=dubbo-rpc-boot-provider
+spring:
+  application:
+    name: dubbo-rpc-boot-provider
+dubbo:
+  application:
+    qos-enable: false
+  protocol:
+    port: 20880
+    name: dubbo
