@@ -6,11 +6,11 @@
     <dubbo:application name="dubbo-first-application"/>
 
     <!-- 网络通讯 -->
-    <dubbo:protocol name="dubbo" port="20880"/>
+    <dubbo:protocol name="dubbo" port="20880" serialization="kryo"/>
 
     <!-- registry to spring -->
     <bean name="helloService" class="com.rpc.dubbo.provider.service.HelloServiceImpl"/>
 
     <!-- server publish -->
-    <dubbo:service interface="com.rpc.dubbo.service.HelloService" ref="helloService" />
+    <dubbo:service interface="com.rpc.dubbo.service.HelloService" ref="helloService"/>
 </beans>
