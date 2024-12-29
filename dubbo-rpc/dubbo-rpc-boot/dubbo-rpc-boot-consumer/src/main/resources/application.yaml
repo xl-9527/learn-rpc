@@ -2,8 +2,8 @@ spring:
   application:
     name: dubbo-rpc-boot-provider
 dubbo:
-  application:
-    qos-enable: true
   protocol:
-    port: 20880
     name: dubbo
+    port: -1
+  application:
+    qos-enable: false

@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @EnableDubbo
 @SpringBootApplication
-public class DubboRpcBootProviderApplication {
+public class DubboRpcBootConsumerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DubboRpcBootProviderApplication.class, args);
+        SpringApplication.run(DubboRpcBootConsumerApplication.class, args);
     }
 }
