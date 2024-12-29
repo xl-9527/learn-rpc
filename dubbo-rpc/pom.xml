@@ -28,6 +28,18 @@
         <dependencies>
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-serialization-kryo</artifactId>
+                <version>2.7.23</version>
+                <exclusions>
+                    <!-- 重复引入了 dubbo common 的依赖，dubbo 的引入为主，如果不 exclusion 就会报错 -->
+                    <exclusion>
+                        <groupId>org.apache.dubbo</groupId>
+                        <artifactId>dubbo-common</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo</artifactId>
                 <version>3.2.14</version>
                 <exclusions>
