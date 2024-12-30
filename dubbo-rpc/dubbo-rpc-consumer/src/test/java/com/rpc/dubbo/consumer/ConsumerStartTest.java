@@ -15,6 +15,9 @@ class ConsumerStartTest {
         new ConsumerStart("application-context.xml").start();
     }
 
+    /**
+     * 使用应该增加 vm 参数 (-ea --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED)
+     */
     @Test
     void startSerializationWithKryo() {
         new ConsumerStart("application-kryo-context.xml").start();

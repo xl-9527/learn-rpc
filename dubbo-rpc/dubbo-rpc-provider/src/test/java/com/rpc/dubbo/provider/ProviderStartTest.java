@@ -16,6 +16,9 @@ class ProviderStartTest {
         providerStart.start();
     }
 
+    /**
+     * 使用应该增加 vm 参数 (-ea --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED)
+     */
     @Test
     void startWithSerializationKryo() throws InterruptedException {
         providerStart = new ProviderStart("application-kryo-context.xml");
