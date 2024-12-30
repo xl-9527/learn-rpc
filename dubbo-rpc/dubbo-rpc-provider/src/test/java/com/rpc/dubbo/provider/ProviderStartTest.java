@@ -24,4 +24,10 @@ class ProviderStartTest {
         providerStart = new ProviderStart("application-kryo-context.xml");
         providerStart.start();
     }
+
+    @Test
+    void startWithSerializationFst() throws InterruptedException {
+        providerStart = new ProviderStart("application-fst-context.xml");
+        providerStart.start();
+    }
 }

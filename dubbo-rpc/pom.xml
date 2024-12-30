@@ -26,6 +26,20 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- fst -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-serialization-fst</artifactId>
+                <version>2.7.23</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.dubbo</groupId>
+                        <artifactId>dubbo-common</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!-- kryo -->
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo-serialization-kryo</artifactId>
