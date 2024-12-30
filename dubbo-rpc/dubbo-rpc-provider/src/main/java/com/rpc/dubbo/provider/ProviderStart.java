@@ -12,8 +12,14 @@ import java.util.concurrent.CountDownLatch;
 @Slf4j
 public class ProviderStart {
 
+    private final String applicationXmlConfig;
+
+    public ProviderStart(final String applicationXmlConfig) {
+        this.applicationXmlConfig = applicationXmlConfig;
+    }
+
     public void start() throws InterruptedException {
-        final ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("application-context.xml");
+        final ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(applicationXmlConfig);
         ctx.start();
         new CountDownLatch(1).await();
     }

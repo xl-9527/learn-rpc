@@ -8,10 +8,17 @@ import org.junit.jupiter.api.Test;
  **/
 class ProviderStartTest {
 
-    private final ProviderStart applicationStart = new ProviderStart();
+    private ProviderStart providerStart;
 
     @Test
     void start() throws InterruptedException {
-        applicationStart.start();
+        providerStart = new ProviderStart("application-context.xml");
+        providerStart.start();
+    }
+
+    @Test
+    void startWithSerializationKryo() throws InterruptedException {
+        providerStart = new ProviderStart("application-kryo-context.xml");
+        providerStart.start();
     }
 }

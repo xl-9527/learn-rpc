@@ -5,8 +5,8 @@
 
     <dubbo:application name="dubbo-first-application"/>
 
-    <!-- 网络通讯 -->
-    <dubbo:protocol name="dubbo" port="20880" serialization="kryo"/>
+    <!-- 协议，默认不设置 serialization is (hessian || fastjson2) -->
+    <dubbo:protocol name="dubbo" port="20880" />
 
     <!-- registry to spring -->
     <bean name="helloService" class="com.rpc.dubbo.provider.service.HelloServiceImpl"/>

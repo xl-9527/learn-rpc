@@ -12,6 +12,11 @@ class ConsumerStartTest {
 
     @Test
     void start() {
-        new ConsumerStart().start();
+        new ConsumerStart("application-context.xml").start();
+    }
+
+    @Test
+    void startSerializationWithKryo() {
+        new ConsumerStart("application-kryo-context.xml").start();
     }
 }

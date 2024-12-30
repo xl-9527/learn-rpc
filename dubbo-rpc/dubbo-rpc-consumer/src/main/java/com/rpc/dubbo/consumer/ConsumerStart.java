@@ -12,8 +12,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 @Slf4j
 public class ConsumerStart {
 
+    private final String applicationXmlConfig;
+
+    public ConsumerStart(final String applicationXmlConfig) {
+        this.applicationXmlConfig = applicationXmlConfig;
+    }
+
     public void start() {
-        final ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("application-context.xml");
+        final ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(applicationXmlConfig);
         Boolean hello = ctx.getBean("helloService", HelloService.class).hello(new Hello("你好", "dubbo-consumer"));
         log.info("调用结果 -> {}", hello);
     }
