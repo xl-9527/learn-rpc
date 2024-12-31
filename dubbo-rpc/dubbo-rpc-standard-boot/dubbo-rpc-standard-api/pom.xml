@@ -12,7 +12,10 @@
     <groupId>com.rpc.dubbo.api</groupId>
     <artifactId>dubbo-rpc-standard-api</artifactId>
 
-    <properties>
-    </properties>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
 </project>

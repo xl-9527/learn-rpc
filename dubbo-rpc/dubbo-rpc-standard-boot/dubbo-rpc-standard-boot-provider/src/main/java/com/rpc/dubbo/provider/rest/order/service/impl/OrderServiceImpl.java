@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
  * @since 2024/12/31
  **/
 @Service
-@DubboService(protocol = "rest")
+@DubboService
 public class OrderServiceImpl implements OrderService {
 
     @Override
