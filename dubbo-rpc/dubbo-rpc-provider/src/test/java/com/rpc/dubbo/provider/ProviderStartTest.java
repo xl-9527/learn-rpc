@@ -25,6 +25,9 @@ class ProviderStartTest {
         providerStart.start();
     }
 
+    /**
+     * 使用应该增加 vm 参数 (-ea --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED)
+     */
     @Test
     void startWithSerializationFst() throws InterruptedException {
         providerStart = new ProviderStart("application-fst-context.xml");
