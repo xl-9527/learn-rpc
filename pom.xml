@@ -14,6 +14,8 @@
         <module>grpc-rpc</module>
         <module>custom-rpc</module>
         <module>dubbo-rpc</module>
+        <module>dubbo-rpc/dubbo-rpc-standard-boot</module>
+        <module>dubbo-rpc/dubbo-rpc-standard-boot/dubbo-rpc-standard-api</module>
     </modules>
 
     <properties>

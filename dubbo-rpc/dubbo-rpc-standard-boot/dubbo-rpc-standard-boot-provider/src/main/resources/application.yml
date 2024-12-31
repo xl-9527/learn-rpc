@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: dubbo-rpc-standard-boot-provider
+dubbo:
+  protocol:
+    name: rest
+    server: tomcat
+    port: 8080
+    context-path: /dubbo

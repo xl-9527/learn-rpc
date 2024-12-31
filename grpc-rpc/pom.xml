@@ -12,6 +12,7 @@
     <groupId>com.rpc.grpc</groupId>
     <artifactId>grpc-rpc</artifactId>
     <packaging>pom</packaging>
+
     <modules>
         <module>grpc-rpc-api</module>
         <module>grpc-rpc-service</module>
