@@ -30,4 +30,9 @@ class ConsumerStartTest {
     void startSerializationWithFst() {
         new ConsumerStart("application-fst-context.xml").start();
     }
+
+    @Test
+    void startSerializationWithFastJson2() {
+        new ConsumerStart("application-fastjson2-context.xml").start();
+    }
 }

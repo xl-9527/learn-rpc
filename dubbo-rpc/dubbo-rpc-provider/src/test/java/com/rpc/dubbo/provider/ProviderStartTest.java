@@ -10,6 +10,9 @@ class ProviderStartTest {
 
     private ProviderStart providerStart;
 
+    /**
+     * 这里默认的可能是 hessian
+     */
     @Test
     void start() throws InterruptedException {
         providerStart = new ProviderStart("application-context.xml");
@@ -31,6 +34,12 @@ class ProviderStartTest {
     @Test
     void startWithSerializationFst() throws InterruptedException {
         providerStart = new ProviderStart("application-fst-context.xml");
+        providerStart.start();
+    }
+
+    @Test
+    void startWithSerializationFastJson2() throws InterruptedException {
+        providerStart = new ProviderStart("application-fastjson2-context.xml");
         providerStart.start();
     }
 }
