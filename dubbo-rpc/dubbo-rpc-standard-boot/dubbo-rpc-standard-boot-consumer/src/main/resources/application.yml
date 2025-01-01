@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: dubbo-rpc-standard-boot-consumer
+  main:
+    web-application-type: none
+dubbo:
+  application:
+    qos-enable: false
+  registry:
+    address: zookeeper://${ZK_HOST:localhost}:2181
+  protocol:
+    name: rest
+    server: tomcat
+    port: 9999
+    contextpath: dubbo_rest_rpc_consumer

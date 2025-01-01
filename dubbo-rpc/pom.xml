@@ -16,6 +16,7 @@
         <module>dubbo-rpc-consumer</module>
         <module>dubbo-rpc-api</module>
         <module>dubbo-rpc-boot</module>
+        <module>dubbo-rpc-standard-boot/dubbo-rpc-standard-boot-consumer</module>
     </modules>
 
     <properties>

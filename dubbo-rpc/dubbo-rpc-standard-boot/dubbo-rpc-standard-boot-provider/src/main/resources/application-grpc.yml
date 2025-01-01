@@ -1,0 +1,4 @@
+dubbo:
+  protocol:
+    name: grpc
+    port: 20880

@@ -1,0 +1,6 @@
+dubbo:
+  protocol:
+    server: tomcat
+    port: 8888
+    contextpath: dubbo_rest_rpc
+    name: rest
