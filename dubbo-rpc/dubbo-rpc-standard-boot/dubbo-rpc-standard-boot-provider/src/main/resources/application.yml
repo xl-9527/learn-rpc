@@ -7,8 +7,8 @@ dubbo:
   protocol:
     name: rest
     server: tomcat
-    port: 8080
+    port: 8888
     contextpath: dubbo_rest_rpc
   registry:
-    address: zookeeper://${ZK_HOST}:2181
+    address: zookeeper://${ZK_HOST:127.0.0.1}:2181
     timeout: 3000
