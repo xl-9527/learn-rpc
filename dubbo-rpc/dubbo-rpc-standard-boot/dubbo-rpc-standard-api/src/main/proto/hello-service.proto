@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_multiple_files = false;
+option java_package = "com.rpc.dubbo.api.grpc";
+option java_outer_classname = "UserServiceProto";
+
+message User {
+  int32 userId = 1;
+  string username = 2;
+}
+
+message UserRequest {
+  int32 userId = 1;
+}
+
+service UserService {
+  rpc queryUserById(UserRequest) returns (User);
+}

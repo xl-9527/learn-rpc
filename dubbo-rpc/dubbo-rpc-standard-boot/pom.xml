@@ -16,8 +16,10 @@
     <packaging>pom</packaging>
 
     <properties>
+        <dubbo.version>3.2.14</dubbo.version>
         <logback.version>1.5.12</logback.version>
         <slf4j.version>2.0.16</slf4j.version>
+        <os.detected.classifier>osx-aarch_64</os.detected.classifier>
     </properties>
 
     <dependencyManagement>
@@ -35,7 +37,7 @@
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo-bom</artifactId>
-                <version>3.2.14</version>
+                <version>${dubbo.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
