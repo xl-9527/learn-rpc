@@ -1,6 +1,3 @@
-spring:
-  application:
-    name: dubbo-rpc-standard-boot-consumer-${spring.profiles.active}
 dubbo:
   protocol:
     name: rest
