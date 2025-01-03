@@ -1,9 +1,10 @@
 package com.rpc.dubbo.provider.rest.order.service.impl;
 
-import com.rpc.dubbo.api.grpc.DubboUserServiceGrpc;
-import com.rpc.dubbo.api.grpc.UserServiceProto;
-import io.grpc.stub.StreamObserver;
+import com.rpc.dubbo.api.grpc.DubboUserServiceTriple;
+import com.rpc.dubbo.api.grpc.User;
+import com.rpc.dubbo.api.grpc.UserRequest;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.dubbo.common.stream.StreamObserver;
 import org.apache.dubbo.config.annotation.DubboService;
 
 /**
@@ -12,12 +13,15 @@ import org.apache.dubbo.config.annotation.DubboService;
  **/
 @Slf4j
 @DubboService
-public class UserServiceImpl extends DubboUserServiceGrpc.UserServiceImplBase {
+public class UserServiceImpl extends DubboUserServiceTriple.UserServiceImplBase {
 
     @Override
-    public void queryUserById(final UserServiceProto.UserRequest request, final StreamObserver<UserServiceProto.User> responseObserver) {
+    public void queryUserById(final UserRequest request, final StreamObserver<User> responseObserver) {
         log.info("queryUserById request user id -> {}", request.getUserId());
-        responseObserver.onNext(UserServiceProto.User.newBuilder().setUsername("xl-9527").setUserId(request.getUserId()).build());
-        responseObserver.onCompleted();
+        try {
+            responseObserver.onNext(User.newBuilder().setUserId(request.getUserId()).setUsername("xl-9527").build());
+        } finally {
+            responseObserver.onCompleted();
+        }
     }
 }

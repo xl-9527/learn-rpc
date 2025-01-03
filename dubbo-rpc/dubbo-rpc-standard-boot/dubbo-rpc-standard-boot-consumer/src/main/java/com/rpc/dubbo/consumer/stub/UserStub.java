@@ -1,7 +1,8 @@
 package com.rpc.dubbo.consumer.stub;
 
-import com.rpc.dubbo.api.grpc.DubboUserServiceGrpc;
-import com.rpc.dubbo.api.grpc.UserServiceProto;
+import com.rpc.dubbo.api.grpc.User;
+import com.rpc.dubbo.api.grpc.UserRequest;
+import com.rpc.dubbo.api.grpc.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.beans.factory.InitializingBean;
@@ -16,11 +17,11 @@ import org.springframework.stereotype.Service;
 public class UserStub implements InitializingBean {
 
     @DubboReference(protocol = "grpc")
-    private DubboUserServiceGrpc.IUserService userService;
+    private UserService userService;
 
 
-    public UserServiceProto.User getUserById(int userId) {
-         return userService.queryUserById(UserServiceProto.UserRequest.newBuilder().setUserId(userId).build());
+    public User getUserById(int userId) {
+         return userService.queryUserById(UserRequest.newBuilder().setUserId(userId).build());
     }
 
     @Override

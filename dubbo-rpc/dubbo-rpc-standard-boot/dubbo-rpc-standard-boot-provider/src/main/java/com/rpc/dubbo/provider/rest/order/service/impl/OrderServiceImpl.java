@@ -3,6 +3,7 @@ package com.rpc.dubbo.provider.rest.order.service.impl;
 import com.rpc.dubbo.api.rest.order.Order;
 import com.rpc.dubbo.api.rest.order.service.OrderService;
 import org.apache.dubbo.config.annotation.DubboService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
  **/
 @Service
 @DubboService
+@Profile("rest")
 public class OrderServiceImpl implements OrderService {
 
     @Override
