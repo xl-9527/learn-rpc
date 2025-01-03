@@ -5,6 +5,7 @@ import com.rpc.dubbo.api.grpc.UserServiceProto;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
  **/
 @Slf4j
 @Service
+@Profile("grpc")
 public class UserStub implements InitializingBean {
 
     @DubboReference(protocol = "grpc")

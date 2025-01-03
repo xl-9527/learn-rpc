@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: dubbo-rpc-standard-boot-consumer-${spring.profiles.active}
+dubbo:
+  protocol:
+    name: rest
+    server: tomcat
+    contextpath: dubbo_rest_rpc_consumer
