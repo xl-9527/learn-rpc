@@ -1,0 +1,6 @@
+dubbo:
+  application:
+    qos-enable: false
+  protocol:
+    name: tri
+    port: -1
