@@ -79,10 +79,15 @@ public final class DubboUserServiceTriple {
 
 
 
+    private static final StubMethodDescriptor userLocalInfoMethod = new StubMethodDescriptor("userLocalInfo",
+    com.rpc.dubbo.api.grpc.UserRequest.class, com.rpc.dubbo.api.grpc.User.class, MethodDescriptor.RpcType.BI_STREAM,
+    obj -> ((Message) obj).toByteArray(), obj -> ((Message) obj).toByteArray(), com.rpc.dubbo.api.grpc.UserRequest::parseFrom,
+    com.rpc.dubbo.api.grpc.User::parseFrom);
 
     static{
         serviceDescriptor.addMethod(queryUserByIdMethod);
         serviceDescriptor.addMethod(queryUserByIdProxyAsyncMethod);
+        serviceDescriptor.addMethod(userLocalInfoMethod);
     }
 
     public static class UserServiceStub implements UserService{
@@ -106,6 +111,10 @@ public final class DubboUserServiceTriple {
         }
 
 
+        @Override
+        public StreamObserver<com.rpc.dubbo.api.grpc.UserRequest> userLocalInfo(StreamObserver<com.rpc.dubbo.api.grpc.User> responseObserver){
+            return StubInvocationUtil.biOrClientStreamCall(invoker, userLocalInfoMethod , responseObserver);
+        }
 
     }
 
@@ -155,6 +164,8 @@ public final class DubboUserServiceTriple {
 
             pathResolver.addNativeStub( "/" + SERVICE_NAME + "/queryUserById" );
             pathResolver.addNativeStub( "/" + SERVICE_NAME + "/queryUserByIdAsync" );
+            pathResolver.addNativeStub( "/" + SERVICE_NAME + "/userLocalInfo" );
+            pathResolver.addNativeStub( "/" + SERVICE_NAME + "/userLocalInfoAsync" );
 
             BiConsumer<com.rpc.dubbo.api.grpc.UserRequest, StreamObserver<com.rpc.dubbo.api.grpc.User>> queryUserByIdFunc = this::queryUserById;
             handlers.put(queryUserByIdMethod.getMethodName(), new UnaryStubMethodHandler<>(queryUserByIdFunc));
@@ -163,6 +174,7 @@ public final class DubboUserServiceTriple {
 
 
 
+            handlers.put(userLocalInfoMethod.getMethodName(), new BiStreamMethodHandler<>(this::userLocalInfo));
 
             return new StubInvoker<>(this, url, UserService.class, handlers);
         }
@@ -175,6 +187,10 @@ public final class DubboUserServiceTriple {
 
 
 
+        @Override
+        public StreamObserver<com.rpc.dubbo.api.grpc.UserRequest> userLocalInfo(StreamObserver<com.rpc.dubbo.api.grpc.User> responseObserver){
+            throw unimplementedMethodException(userLocalInfoMethod);
+        }
 
 
         @Override

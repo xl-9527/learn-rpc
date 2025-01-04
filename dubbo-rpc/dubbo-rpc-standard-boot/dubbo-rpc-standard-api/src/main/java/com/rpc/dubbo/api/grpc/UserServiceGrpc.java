@@ -46,6 +46,37 @@ public final class UserServiceGrpc {
     return getQueryUserByIdMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.rpc.dubbo.api.grpc.UserRequest,
+      com.rpc.dubbo.api.grpc.User> getUserLocalInfoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "userLocalInfo",
+      requestType = com.rpc.dubbo.api.grpc.UserRequest.class,
+      responseType = com.rpc.dubbo.api.grpc.User.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<com.rpc.dubbo.api.grpc.UserRequest,
+      com.rpc.dubbo.api.grpc.User> getUserLocalInfoMethod() {
+    io.grpc.MethodDescriptor<com.rpc.dubbo.api.grpc.UserRequest, com.rpc.dubbo.api.grpc.User> getUserLocalInfoMethod;
+    if ((getUserLocalInfoMethod = UserServiceGrpc.getUserLocalInfoMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getUserLocalInfoMethod = UserServiceGrpc.getUserLocalInfoMethod) == null) {
+          UserServiceGrpc.getUserLocalInfoMethod = getUserLocalInfoMethod =
+              io.grpc.MethodDescriptor.<com.rpc.dubbo.api.grpc.UserRequest, com.rpc.dubbo.api.grpc.User>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "userLocalInfo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.rpc.dubbo.api.grpc.UserRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.rpc.dubbo.api.grpc.User.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("userLocalInfo"))
+              .build();
+        }
+      }
+    }
+    return getUserLocalInfoMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -95,10 +126,23 @@ public final class UserServiceGrpc {
   public interface AsyncService {
 
     /**
+     * <pre>
+     * 一元 RPC
+     * </pre>
      */
     default void queryUserById(com.rpc.dubbo.api.grpc.UserRequest request,
         io.grpc.stub.StreamObserver<com.rpc.dubbo.api.grpc.User> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getQueryUserByIdMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 测试流式
+     * </pre>
+     */
+    default io.grpc.stub.StreamObserver<com.rpc.dubbo.api.grpc.UserRequest> userLocalInfo(
+        io.grpc.stub.StreamObserver<com.rpc.dubbo.api.grpc.User> responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getUserLocalInfoMethod(), responseObserver);
     }
   }
 
@@ -130,11 +174,25 @@ public final class UserServiceGrpc {
     }
 
     /**
+     * <pre>
+     * 一元 RPC
+     * </pre>
      */
     public void queryUserById(com.rpc.dubbo.api.grpc.UserRequest request,
         io.grpc.stub.StreamObserver<com.rpc.dubbo.api.grpc.User> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getQueryUserByIdMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 测试流式
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<com.rpc.dubbo.api.grpc.UserRequest> userLocalInfo(
+        io.grpc.stub.StreamObserver<com.rpc.dubbo.api.grpc.User> responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+          getChannel().newCall(getUserLocalInfoMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -155,6 +213,9 @@ public final class UserServiceGrpc {
     }
 
     /**
+     * <pre>
+     * 一元 RPC
+     * </pre>
      */
     public com.rpc.dubbo.api.grpc.User queryUserById(com.rpc.dubbo.api.grpc.UserRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -179,6 +240,9 @@ public final class UserServiceGrpc {
     }
 
     /**
+     * <pre>
+     * 一元 RPC
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.rpc.dubbo.api.grpc.User> queryUserById(
         com.rpc.dubbo.api.grpc.UserRequest request) {
@@ -188,6 +252,7 @@ public final class UserServiceGrpc {
   }
 
   private static final int METHODID_QUERY_USER_BY_ID = 0;
+  private static final int METHODID_USER_LOCAL_INFO = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -220,6 +285,9 @@ public final class UserServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_USER_LOCAL_INFO:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.userLocalInfo(
+              (io.grpc.stub.StreamObserver<com.rpc.dubbo.api.grpc.User>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -235,6 +303,13 @@ public final class UserServiceGrpc {
               com.rpc.dubbo.api.grpc.UserRequest,
               com.rpc.dubbo.api.grpc.User>(
                 service, METHODID_QUERY_USER_BY_ID)))
+        .addMethod(
+          getUserLocalInfoMethod(),
+          io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+            new MethodHandlers<
+              com.rpc.dubbo.api.grpc.UserRequest,
+              com.rpc.dubbo.api.grpc.User>(
+                service, METHODID_USER_LOCAL_INFO)))
         .build();
   }
 
@@ -284,6 +359,7 @@ public final class UserServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new UserServiceFileDescriptorSupplier())
               .addMethod(getQueryUserByIdMethod())
+              .addMethod(getUserLocalInfoMethod())
               .build();
         }
       }

@@ -16,5 +16,8 @@ message UserRequest {
 }
 
 service UserService {
+  // 一元 RPC
   rpc queryUserById(UserRequest) returns (User);
+  // 测试流式
+  rpc userLocalInfo(stream UserRequest) returns (stream User);
 }

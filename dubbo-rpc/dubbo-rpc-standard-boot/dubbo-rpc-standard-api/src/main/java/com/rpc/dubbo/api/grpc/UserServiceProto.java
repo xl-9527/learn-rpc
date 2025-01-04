@@ -36,10 +36,13 @@ public final class UserServiceProto {
       "\n\026UserServiceProto.proto\022\026com.rpc.dubbo." +
       "api.grpc\"(\n\004User\022\016\n\006userId\030\001 \001(\005\022\020\n\010user" +
       "name\030\002 \001(\t\"\035\n\013UserRequest\022\016\n\006userId\030\001 \001(" +
-      "\0052a\n\013UserService\022R\n\rqueryUserById\022#.com." +
-      "rpc.dubbo.api.grpc.UserRequest\032\034.com.rpc" +
-      ".dubbo.api.grpc.UserB,\n\026com.rpc.dubbo.ap" +
-      "i.grpcB\020UserServiceProtoP\001b\006proto3"
+      "\0052\271\001\n\013UserService\022R\n\rqueryUserById\022#.com" +
+      ".rpc.dubbo.api.grpc.UserRequest\032\034.com.rp" +
+      "c.dubbo.api.grpc.User\022V\n\ruserLocalInfo\022#" +
+      ".com.rpc.dubbo.api.grpc.UserRequest\032\034.co" +
+      "m.rpc.dubbo.api.grpc.User(\0010\001B,\n\026com.rpc" +
+      ".dubbo.api.grpcB\020UserServiceProtoP\001b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

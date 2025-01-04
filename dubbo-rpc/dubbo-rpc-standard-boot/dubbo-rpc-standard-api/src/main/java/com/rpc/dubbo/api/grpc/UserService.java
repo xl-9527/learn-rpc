@@ -38,6 +38,7 @@ public interface UserService extends org.apache.dubbo.rpc.model.DubboStub {
 
 
 
+    StreamObserver<com.rpc.dubbo.api.grpc.UserRequest> userLocalInfo(StreamObserver<com.rpc.dubbo.api.grpc.User> responseObserver);
 
 
 
