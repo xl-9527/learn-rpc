@@ -6,6 +6,7 @@ import com.rpc.dubbo.api.grpc.UserRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.common.stream.StreamObserver;
 import org.apache.dubbo.config.annotation.DubboService;
+import org.springframework.context.annotation.Profile;
 
 /**
  * @author xl-9527
@@ -13,6 +14,7 @@ import org.apache.dubbo.config.annotation.DubboService;
  **/
 @Slf4j
 @DubboService
+@Profile({"grpc", "tri"})
 public class UserServiceImpl extends DubboUserServiceTriple.UserServiceImplBase {
 
     @Override
