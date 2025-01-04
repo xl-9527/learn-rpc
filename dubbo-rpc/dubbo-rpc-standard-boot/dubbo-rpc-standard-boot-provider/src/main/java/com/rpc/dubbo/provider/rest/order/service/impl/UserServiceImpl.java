@@ -44,7 +44,7 @@ public class UserServiceImpl extends DubboUserServiceTriple.UserServiceImplBase 
 
             @Override
             public void onError(final Throwable throwable) {
-                log.error("has exception", throwable);
+//                log.error("has exception", throwable);
             }
 
             @Override
