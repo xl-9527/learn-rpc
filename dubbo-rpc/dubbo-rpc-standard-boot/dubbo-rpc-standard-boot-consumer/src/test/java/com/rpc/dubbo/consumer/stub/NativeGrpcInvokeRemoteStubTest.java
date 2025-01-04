@@ -21,4 +21,9 @@ class NativeGrpcInvokeRemoteStubTest {
         log.info("username: {}", user.getUsername());
         log.info("userId: {}", user.getUserId());
     }
+
+    @Test
+    void userLocalInfo() throws InterruptedException {
+        stub.userLocalInfo(1).forEach(user -> log.info("username is: {}", user));
+    }
 }
