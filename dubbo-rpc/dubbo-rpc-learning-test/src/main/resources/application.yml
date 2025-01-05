@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: dubbo-rpc-learning-test
+dubbo:
+  application:
+    register-mode: instance
