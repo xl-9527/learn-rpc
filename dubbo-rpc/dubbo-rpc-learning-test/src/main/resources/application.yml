@@ -1,6 +1,20 @@
 spring:
   application:
     name: dubbo-rpc-learning-test
+  main:
+    web-application-type: none
 dubbo:
   application:
     register-mode: instance
+    metadata-type: remote
+  protocols:
+    dubbo:
+      name: dubbo
+      port: -1
+    restful:
+      name: rest
+      port: 80
+      contextpath: /restful
+      server: tomcat
+  registry:
+    address: nacos://127.0.0.1:8848

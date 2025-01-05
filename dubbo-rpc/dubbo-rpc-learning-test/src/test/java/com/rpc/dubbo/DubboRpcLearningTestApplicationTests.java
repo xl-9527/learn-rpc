@@ -9,5 +9,4 @@ class DubboRpcLearningTestApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }
