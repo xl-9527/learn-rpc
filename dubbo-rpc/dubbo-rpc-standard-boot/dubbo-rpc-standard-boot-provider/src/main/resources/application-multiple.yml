@@ -1,0 +1,10 @@
+dubbo:
+  protocols:
+    tri:
+      name: tri
+      port: -1
+    rest:
+      name: rest
+      port: -1
+      server: tomcat
+      contextpath: /restful
