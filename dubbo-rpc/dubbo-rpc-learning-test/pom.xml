@@ -16,6 +16,7 @@
 
     <properties>
         <java.version>23</java.version>
+        <protobuf.version>4.28.2</protobuf.version>
     </properties>
 
     <dependencies>
@@ -45,7 +46,7 @@
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
-            <version>4.28.2</version>
+            <version>${protobuf.version}</version>
         </dependency>
 
         <!-- register -->
@@ -94,6 +95,8 @@
 
     <build>
         <plugins>
+            <!-- protobuf-maven-plugin -->
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
