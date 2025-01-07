@@ -27,10 +27,14 @@ dubbo:
         namespace: 096e0cc4-f6c3-428a-a712-71dd2c3162a4
       group: xl-9527
       check: true
+      # 表示更喜欢这个注册中心，直接只会使用这个注册中心
+      # preferred: true
+      weight: 10
     zookeeper:
       address: ${ZOOKEEPER_ADDRESS:127.0.0.1}:2181
       protocol: zookeeper
       check: true
+      weight: 90
 logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"

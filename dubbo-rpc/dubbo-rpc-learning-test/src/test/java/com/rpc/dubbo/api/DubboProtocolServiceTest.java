@@ -22,7 +22,7 @@ class DubboProtocolServiceTest {
     @DubboReference(protocol = "dubbo")
     private DubboProtocolService dubboProtocolService;
 
-    @RepeatedTest(5)
+    @RepeatedTest(50)
     void test() {
         log.info("dubboProtocolService.test(\"hello\") = {}", dubboProtocolService.test("hello"));
     }
