@@ -20,7 +20,7 @@ dubbo:
       name: tri
       port: -1
   registry:
-    address: nacos://127.0.0.1:8848
+    address: nacos://${NACOS_ADDRESS:127.0.0.1}:8848
     parameters:
       namespace: 096e0cc4-f6c3-428a-a712-71dd2c3162a4
     group: xl-9527
