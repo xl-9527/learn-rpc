@@ -31,3 +31,6 @@ dubbo:
       address: ${ZOOKEEPER_ADDRESS:127.0.0.1}:2181
       protocol: zookeeper
       check: true
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
