@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: dubbo-rpc-learning-test-test
+  main:
+    web-application-type: none
+dubbo:
+  application:
+    register-mode: instance
+    metadata-type: remote
+    qos-enable: false
+  protocols:
+    dubbo:
+      name: dubbo
+      port: -1
+    restful:
+      name: rest
+      port: -1
+      contextpath: /restful
+      server: tomcat
+    triple:
+      name: tri
+      port: -1
+  registries:
+    nacos:
+      address: ${NACOS_ADDRESS:127.0.0.1}:8848
+      protocol: nacos
+      parameters:
+        namespace: 096e0cc4-f6c3-428a-a712-71dd2c3162a4
+      group: xl-9527
+      check: true
+    zookeeper:
+      address: ${ZOOKEEPER_ADDRESS:127.0.0.1}:2181
+      protocol: zookeeper
+      check: true
