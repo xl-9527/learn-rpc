@@ -1,11 +1,15 @@
-syntax = "protocol3";
+syntax = "proto3";
 
 option java_multiple_files = true;
 option java_package = "com.rpc.dubbo.api.proto";
-option java_outer_classname = "TripleGrpcProtocolService";
+option java_outer_classname = "TripleGrpcProtocol";
 
-message TripleGrpcProtocolServiceDTO {}
-message TripleGrpcProtocolServiceVO {}
+message TripleGrpcProtocolServiceDTO {
+  string name = 1;
+}
+message TripleGrpcProtocolServiceVO {
+  string name = 1;
+}
 
 service TripleGrpcProtocolService {
   rpc testTripleGrpcProtocolService(TripleGrpcProtocolServiceDTO) returns (TripleGrpcProtocolServiceVO);
