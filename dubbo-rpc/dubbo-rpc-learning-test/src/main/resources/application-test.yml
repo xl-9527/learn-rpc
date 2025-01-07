@@ -1,6 +1,6 @@
 spring:
   application:
-    name: dubbo-rpc-learning-test-test
+    name: dubbo-rpc-learning-test-invoke
   main:
     web-application-type: none
 dubbo:
@@ -8,6 +8,7 @@ dubbo:
     register-mode: instance
     metadata-type: remote
     qos-enable: false
+    enable-file-cache: false
   protocols:
     dubbo:
       name: dubbo
