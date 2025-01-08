@@ -11,11 +11,6 @@ dubbo:
     dubbo:
       name: dubbo
       port: -1
-    restful:
-      name: rest
-      port: 80
-      contextpath: /restful
-      server: tomcat
     triple:
       name: tri
       port: -1

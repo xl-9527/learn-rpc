@@ -9,7 +9,7 @@ import java.util.Map;
  * @author xl-9527
  * @since 2025/1/5
  **/
-@DubboService(protocol = "rest")
+@DubboService
 public class RestfulProtocolServiceImpl implements RestfulProtocolService {
 
     @Override
