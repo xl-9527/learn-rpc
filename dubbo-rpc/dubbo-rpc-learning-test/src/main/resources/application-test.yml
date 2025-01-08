@@ -33,3 +33,6 @@ dubbo:
       address: ${ZOOKEEPER_ADDRESS:127.0.0.1}:2181
       protocol: zookeeper
       check: true
+logging:
+  level:
+    org.apache.dubbo: info

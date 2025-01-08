@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
  * @author xl-9527
  * @since 2025/1/7
  **/
-@DubboService(protocol = "tri", version = "1.0.0", group = "version")
+@DubboService(protocol = "tri", version = "1.0.0", group = "version", accesslog = "xl-9527")
 public class VersionDubboService1Impl implements VersionDubboService {
 
     private static final Logger log = LoggerFactory.getLogger(VersionDubboService1Impl.class);

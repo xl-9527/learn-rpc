@@ -7,6 +7,8 @@ dubbo:
   application:
     register-mode: instance
     metadata-type: remote
+    name: ${spring.application.name}
+    qos-enable: false
   protocols:
     dubbo:
       name: dubbo
@@ -33,3 +35,5 @@ dubbo:
 logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+  level:
+    org.apache.dubbo: debug

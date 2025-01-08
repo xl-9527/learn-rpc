@@ -20,7 +20,7 @@ class TripleProtoProtobufServiceImplTest {
 
     private static final Logger log = LoggerFactory.getLogger(TripleProtoProtobufServiceImplTest.class);
 
-    @DubboReference(protocol = "grpc")
+    @DubboReference(protocol = "grpc", providedBy = "dubbo-rpc-learning-test")
     private TripleGrpcProtocolService tripleGrpcProtocolService;
 
     @Test

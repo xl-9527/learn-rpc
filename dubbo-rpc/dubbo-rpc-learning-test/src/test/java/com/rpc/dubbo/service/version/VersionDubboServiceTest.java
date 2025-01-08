@@ -20,10 +20,10 @@ class VersionDubboServiceTest {
 
     private static final Logger log = LoggerFactory.getLogger(VersionDubboServiceTest.class);
 
-    @DubboReference(version = "1.0.0", group = "version", loadbalance = LoadbalanceRules.ROUND_ROBIN)
+    @DubboReference(version = "1.0.0", group = "version", providedBy = "dubbo-rpc-learning-test")
     private VersionDubboService versionDubboService;
 
-    @DubboReference(version = "2.0.0", group = "version", providedBy = "dubbo-rpc-learning-test")
+    @DubboReference(version = "2.0.0", group = "version")
     private VersionDubboService versionDubboService2;
 
     @RepeatedTest(99)
