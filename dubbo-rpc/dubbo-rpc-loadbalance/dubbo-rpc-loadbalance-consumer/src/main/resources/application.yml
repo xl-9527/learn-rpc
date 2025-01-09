@@ -1,6 +1,6 @@
 spring:
   application:
-    name: dubbo-rpc-load-balance-provider
+    name: dubbo-rpc-load-balance-consumer
 dubbo:
   application:
     register-mode: instance
@@ -15,3 +15,5 @@ dubbo:
     group: xl-9527
     parameters:
       namespace: 096e0cc4-f6c3-428a-a712-71dd2c3162a4
+  consumer:
+    loadbalance: random

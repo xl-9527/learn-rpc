@@ -16,13 +16,15 @@
 
     <modules>
         <module>dubbo-rpc-loadbalance-provider</module>
+        <module>dubbo-rpc-loadbalance-api</module>
+        <module>dubbo-rpc-loadbalance-consumer</module>
     </modules>
 
     <properties>
         <maven.compiler.source>23</maven.compiler.source>
         <maven.compiler.target>23</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <dubbo.version>3.3.1</dubbo.version>
+        <dubbo3.version>3.3.1</dubbo3.version>
         <logback.version>1.5.12</logback.version>
         <slf4j.version>2.0.16</slf4j.version>
     </properties>
@@ -42,7 +44,7 @@
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo-bom</artifactId>
-                <version>${dubbo.version}</version>
+                <version>${dubbo3.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

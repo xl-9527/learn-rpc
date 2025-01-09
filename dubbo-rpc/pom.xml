@@ -24,6 +24,7 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <dubbo.version>3.2.14</dubbo.version>
     </properties>
 
     <dependencyManagement>
@@ -57,7 +58,7 @@
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo</artifactId>
-                <version>3.2.14</version>
+                <version>${dubbo.version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>io.netty</groupId>
