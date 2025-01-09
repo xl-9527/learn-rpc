@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: dubbo-rpc-load-balance-provider
+dubbo:
+  application:
+    register-mode: instance
+  protocol:
+    name: tri
+    port: -1
+  registry:
+    address: ${NACOS_ADDRESS:127.0.0.1}:8848
+    protocol: nacos
+    group: xl-9527
+    parameters:
+      namespace: 096e0cc4-f6c3-428a-a712-71dd2c3162a4
