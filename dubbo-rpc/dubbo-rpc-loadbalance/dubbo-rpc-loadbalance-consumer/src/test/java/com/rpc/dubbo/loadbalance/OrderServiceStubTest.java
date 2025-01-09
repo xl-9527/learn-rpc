@@ -19,4 +19,9 @@ class OrderServiceStubTest {
     void getOrderNumber() {
         orderServiceStub.getOrderNumber(1L);
     }
+
+    @RepeatedTest(10)
+    void getOrderNumberWithFail() {
+        orderServiceStub.getOrderNumber(1L);
+    }
 }
