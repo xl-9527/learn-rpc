@@ -1,7 +1,6 @@
 package com.rpc.dubbo.loadbalance.random;
 
 import com.rpc.dubbo.loadbalance.OrderService;
-import org.apache.dubbo.common.constants.ClusterRules;
 import org.apache.dubbo.common.constants.LoadbalanceRules;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.slf4j.Logger;

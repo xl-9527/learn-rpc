@@ -9,6 +9,9 @@ dubbo:
   protocol:
     name: tri
     port: -1
+    # 线程分发模型：all
+    dispatcher: all
+    threads:
   registry:
     address: ${NACOS_ADDRESS:127.0.0.1}:8848
     protocol: nacos
