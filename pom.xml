@@ -16,6 +16,7 @@
         <module>dubbo-rpc</module>
         <module>dubbo-rpc/dubbo-rpc-standard-boot</module>
         <module>dubbo-rpc/dubbo-rpc-standard-boot/dubbo-rpc-standard-api</module>
+        <module>dubbo-rpc-source</module>
     </modules>
 
     <properties>
