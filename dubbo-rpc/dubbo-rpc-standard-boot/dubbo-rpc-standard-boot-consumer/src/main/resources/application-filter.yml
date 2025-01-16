@@ -1,0 +1,4 @@
+dubbo:
+  registry:
+    protocol: nacos
+    address: ${NACOS_ADDRESS:127.0.0.1}:8848

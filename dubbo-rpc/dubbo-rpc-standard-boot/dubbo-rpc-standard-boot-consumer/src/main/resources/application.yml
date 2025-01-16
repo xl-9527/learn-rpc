@@ -6,7 +6,9 @@ spring:
 dubbo:
   application:
     qos-enable: false
+    register-mode: instance
   registry:
-    address: zookeeper://${ZK_HOST:localhost}:2181
+    address: ${ZK_HOST:localhost}:2181
+    protocol: zookeeper
   protocol:
     port: 9999
