@@ -9,5 +9,5 @@
     <dubbo:service interface="com.rpc.dubbo.source.service.UserService" ref="userService" />
 
     <!-- register -->
-    <dubbo:registry address="127.0.0.1:8848" protocol="nacos" />
+    <dubbo:registry address="${NACOS_ADDRESS}:127.0.0.1:8848" protocol="nacos" />
 </beans>
