@@ -18,6 +18,7 @@
         <module>dubbo-rpc-boot</module>
         <module>dubbo-rpc-standard-boot/dubbo-rpc-standard-boot-consumer</module>
         <module>dubbo-rpc-loadbalance</module>
+        <module>dubbo-rpc-standard-boot</module>
     </modules>
 
     <properties>
