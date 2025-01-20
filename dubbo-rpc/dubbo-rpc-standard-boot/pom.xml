@@ -14,6 +14,13 @@
     <version>0.0.1</version>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>dubbo-rpc-standard-metrics-boot-provider</module>
+        <module>dubbo-rpc-standard-api</module>
+        <module>dubbo-rpc-standard-boot-consumer</module>
+        <module>dubbo-rpc-standard-boot-provider</module>
+    </modules>
+
     <properties>
         <dubbo.version>3.2.14</dubbo.version>
         <logback.version>1.5.12</logback.version>
