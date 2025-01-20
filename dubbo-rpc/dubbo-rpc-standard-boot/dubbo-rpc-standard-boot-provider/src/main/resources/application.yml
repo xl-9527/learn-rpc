@@ -6,7 +6,7 @@ spring:
 dubbo:
   registry:
     # address: zookeeper://${ZK_HOST:127.0.0.1}:2181
-    address: nacos://127.0.0.1:8848
+    address: nacos://${NACOS_ADDRESS:127.0.0.1}:8848
     timeout: 3000
     register-mode: instance
   application:

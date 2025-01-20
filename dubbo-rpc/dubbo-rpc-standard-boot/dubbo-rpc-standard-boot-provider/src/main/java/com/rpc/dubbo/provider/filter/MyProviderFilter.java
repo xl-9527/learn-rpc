@@ -10,7 +10,7 @@ import org.apache.dubbo.rpc.*;
  * @since 2025/1/11
  **/
 @Slf4j
-@Activate(group = CommonConstants.PROVIDER) // active 中 group 的设置是表示他运行在 consumer 还是 provider 端，这是必须要要配置的
+//@Activate(group = CommonConstants.PROVIDER) // active 中 group 的设置是表示他运行在 consumer 还是 provider 端，这是必须要要配置的
 public class MyProviderFilter implements Filter {
 
     /**
