@@ -1,9 +1,38 @@
 spring:
   application:
-    name: dubbo-rpc-standard-metrics-boot-provider-grpc
+    name: dubbo-rpc-standard-metrics-boot-provider
 dubbo:
+  metrics:
+    protocol: prometheus
   application:
     register-mode: instance
+    metadata-type: remote
   registry:
     address: ${NACOS_ADDRESS:127.0.0.1}:8848
-    timeout: 3000
+    protocol: nacos
+    group: xl-9527
+    parameters:
+      namespace: 096e0cc4-f6c3-428a-a712-71dd2c3162a4
+  protocols:
+    triple:
+      name: tri
+      port: -1
+      serialization: grpc
+  metadata-report:
+    group: xl-9527
+    address: ${NACOS_ADDRESS:127.0.0.1}:8848
+    protocol: nacos
+    parameters:
+      namespace: 096e0cc4-f6c3-428a-a712-71dd2c3162a4
+  config-center:
+    group: xl-9527
+    address: ${NACOS_ADDRESS:127.0.0.1}:8848
+    protocol: nacos
+    namespace: 096e0cc4-f6c3-428a-a712-71dd2c3162a4
+    app-config-file:
+management:
+  server:
+    port: 18081
+  endpoints:
+    web:
+      base-path: /actuator
