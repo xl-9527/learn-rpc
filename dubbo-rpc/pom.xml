@@ -11,6 +11,7 @@
 
     <artifactId>dubbo-rpc</artifactId>
     <packaging>pom</packaging>
+
     <modules>
         <module>dubbo-rpc-provider</module>
         <module>dubbo-rpc-consumer</module>

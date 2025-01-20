@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: dubbo-rpc-standard-metrics-boot-provider-grpc
+dubbo:
+  application:
+    register-mode: instance
+  registry:
+    address: ${NACOS_ADDRESS:127.0.0.1}:8848
+    timeout: 3000
