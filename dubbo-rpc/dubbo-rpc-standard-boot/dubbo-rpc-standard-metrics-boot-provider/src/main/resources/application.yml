@@ -10,26 +10,25 @@ dubbo:
   registry:
     address: ${NACOS_ADDRESS:127.0.0.1}:8848
     protocol: nacos
-    group: xl-9527
-    parameters:
-      namespace: 096e0cc4-f6c3-428a-a712-71dd2c3162a4
+#    group: xl-9527
+#    parameters:
+#      namespace: 096e0cc4-f6c3-428a-a712-71dd2c3162a4
   protocols:
     triple:
       name: tri
       port: -1
-      serialization: grpc
+      serialization: protobuf
   metadata-report:
-    group: xl-9527
+#    group: xl-9527
     address: ${NACOS_ADDRESS:127.0.0.1}:8848
     protocol: nacos
-    parameters:
-      namespace: 096e0cc4-f6c3-428a-a712-71dd2c3162a4
+#    parameters:
+#      namespace: 096e0cc4-f6c3-428a-a712-71dd2c3162a4
   config-center:
-    group: xl-9527
+#    group: xl-9527
     address: ${NACOS_ADDRESS:127.0.0.1}:8848
     protocol: nacos
-    namespace: 096e0cc4-f6c3-428a-a712-71dd2c3162a4
-    app-config-file:
+#    namespace: 096e0cc4-f6c3-428a-a712-71dd2c3162a4
 management:
   server:
     port: 18081
